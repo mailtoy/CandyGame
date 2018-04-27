@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="890.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.RankingController">
+   <children>
+      <ImageView fitHeight="555.0" fitWidth="890.0" pickOnBounds="true">
+         <image>
+            <Image url="@../resource/cartoon-fairy-tale-candy-seamless-vector-6678185.jpg" />
+         </image></ImageView>
+      <ImageView fitHeight="409.0" fitWidth="399.0" layoutX="265.0" layoutY="77.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resource/PNG_Assets/PNG/window_panel_6.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="336.0" fitWidth="261.0" layoutX="318.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resource/window_panel_title_2@4x.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="backButton" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="70.0" prefWidth="89.0" style="-fx-background-color: teansparent;">
+         <graphic>
+            <ImageView fitHeight="70.0" fitWidth="89.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resource/PNG_Assets/PNG/btn_prev_click.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>
