@@ -21,24 +21,17 @@
             <Image url="@../resource/PNG_Assets/PNG/window_panel_3.png" />
          </image>
       </ImageView>
-      <TextField layoutX="402.0" layoutY="204.0" style="-fx-background-color: teansparent;" />
       <ImageView fitHeight="61.0" fitWidth="211.0" layoutX="380.0" layoutY="187.0" pickOnBounds="true">
          <image>
             <Image url="@../resource/PNG_Assets/PNG/button_text_green.png" />
          </image>
       </ImageView>
-      <TextField layoutX="402.0" layoutY="293.0" style="-fx-background-color: teansparent;" />
       <ImageView fitHeight="61.0" fitWidth="206.0" layoutX="383.0" layoutY="279.0" pickOnBounds="true">
          <image>
             <Image url="@../resource/PNG_Assets/PNG/button_text_green.png" />
          </image>
       </ImageView>
       <Label layoutX="302.0" layoutY="203.0" prefHeight="29.0" prefWidth="31.0" text="ID:" textFill="WHITE">
-         <font>
-            <Font name="Impact" size="16.0" />
-         </font>
-      </Label>
-      <Label layoutX="295.0" layoutY="296.0" text="PASSWORD:" textFill="WHITE">
          <font>
             <Font name="Impact" size="16.0" />
          </font>
@@ -53,11 +46,21 @@
             <Font name="Impact" size="41.0" />
          </font>
       </Label>
-      <Button layoutX="531.0" layoutY="370.0" mnemonicParsing="false" style="-fx-background-color: teansparent;" />
-      <ImageView blendMode="SRC_ATOP" fitHeight="39.0" fitWidth="47.0" layoutX="560.0" layoutY="358.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../resource/PNG_Assets/PNG/element_checkmark_cheked.png" />
-         </image>
-      </ImageView>
+      <Button fx:id="enterButton" layoutX="547.0" layoutY="351.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="76.0" style="-fx-background-color: teansparent;">
+         <graphic>
+            <ImageView blendMode="SRC_ATOP" fitHeight="50.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resource/PNG_Assets/PNG/element_checkmark_cheked.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Label layoutX="295.0" layoutY="296.0" text="PASSWORD:" textFill="WHITE">
+         <font>
+            <Font name="Impact" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="id" layoutX="402.0" layoutY="204.0" style="-fx-background-color: teansparent;" />
+      <TextField fx:id="password" layoutX="402.0" layoutY="293.0" style="-fx-background-color: teansparent;" />
    </children>
 </AnchorPane>
