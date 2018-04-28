@@ -17,7 +17,7 @@
             <Image url="@../resource/Untitled-1.png" />
          </image>
       </ImageView>
-      <Button fx:id="loginButton" layoutX="331.0" layoutY="328.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="146.0" style="-fx-background-color: teansparent;">
+      <Button fx:id="loginButton" layoutX="331.0" layoutY="328.0" mnemonicParsing="false" onAction="#login" prefHeight="51.0" prefWidth="146.0" style="-fx-background-color: teansparent;">
          <graphic>
             <ImageView fitHeight="68.0" fitWidth="211.0" pickOnBounds="true">
                <image>
@@ -26,7 +26,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="rankButton" layoutX="794.0" layoutY="14.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="96.0" style="-fx-background-color: teansparent;">
+      <Button fx:id="rankButton" layoutX="794.0" layoutY="14.0" mnemonicParsing="false" onAction="#ranking" prefHeight="68.0" prefWidth="96.0" style="-fx-background-color: teansparent;">
          <graphic>
             <ImageView fitHeight="70.0" fitWidth="89.0" pickOnBounds="true" preserveRatio="true">
                <image>

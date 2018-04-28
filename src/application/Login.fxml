@@ -45,7 +45,7 @@
             <Font name="Impact" size="41.0" />
          </font>
       </Label>
-      <Button fx:id="enterButton" layoutX="547.0" layoutY="351.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="76.0" style="-fx-background-color: teansparent;">
+      <Button fx:id="enterButton" layoutX="547.0" layoutY="351.0" mnemonicParsing="false" onAction="#enterGame" prefHeight="61.0" prefWidth="76.0" style="-fx-background-color: teansparent;">
          <graphic>
             <ImageView blendMode="SRC_ATOP" fitHeight="50.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -59,9 +59,15 @@
             <Font name="Impact" size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="id" layoutX="402.0" layoutY="204.0" style="-fx-background-color: teansparent;" />
-      <TextField fx:id="password" layoutX="402.0" layoutY="293.0" style="-fx-background-color: teansparent;" />
-      <Label fx:id="status" layoutX="310.0" layoutY="41.0" prefHeight="17.0" prefWidth="268.0" textFill="#f51111">
+      <TextField fx:id="id" layoutX="407.0" layoutY="193.0" prefHeight="21.0" prefWidth="170.0" style="-fx-background-color: teansparent;">
+         <font>
+            <Font name="Impact" size="16.0" />
+         </font></TextField>
+      <TextField fx:id="password" layoutX="407.0" layoutY="290.0" prefHeight="21.0" prefWidth="170.0" style="-fx-background-color: teansparent;">
+         <font>
+            <Font name="Impact" size="16.0" />
+         </font></TextField>
+      <Label fx:id="status" layoutX="310.0" layoutY="41.0" prefHeight="17.0" prefWidth="268.0" textFill="#f81515">
          <font>
             <Font name="Impact" size="16.0" />
          </font>

@@ -1,13 +1,16 @@
 package application;
 
 import java.io.IOException;
-import java.sql.SQLException;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class LoginController {
 	@FXML
@@ -18,30 +21,49 @@ public class LoginController {
 	private Button enterButton;
 	@FXML
 	private Label status;
-	
+
 	@FXML
-	public void login(ActionEvent event) {
+	public void enterGame(ActionEvent event) throws IOException {
 		LoginVerifyUser login = new LoginVerifyUser(id.getText(), password.getText());
 		try {
 			// can login (have old id and pass)
 			if (login.verifyUser() == 1) {
 				// can play
-			} 
-			// incorrect
-			if (login.verifyUser() == 2){
-				status.setText("Incorrect username and/or password");
+				try {
+					FXMLLoader loader = new FXMLLoader(getClass().getResource("Game.fxml"));
+					Stage stage = new Stage();
+					stage.setScene(new Scene((Parent) loader.load()));
+					stage.show();
+					Stage loginStage = (Stage) enterButton.getScene().getWindow();
+					loginStage.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+			// incorrect id and/or password
+			if (login.verifyUser() == 2) {
+				status.setText("Incorrect id and/or password");
 				// login again
 			}
 			// new user
 			if (login.verifyUser() == 0) {
-				//can play
+				// can play
+				try {
+					FXMLLoader loader = new FXMLLoader(getClass().getResource("Game.fxml"));
+					Stage stage = new Stage();
+					stage.setScene(new Scene((Parent) loader.load()));
+					stage.show();
+					Stage loginStage = (Stage) enterButton.getScene().getWindow();
+					loginStage.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 			}
 		} catch (IllegalArgumentException e) {
 			status.setText("ERROR : " + e.getMessage());
 		} finally {
-			
+
 		}
 	}
-		
 
 }
