@@ -5,15 +5,14 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="application.LoadingController">
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LoadingController">
    <children>
       <ImageView fitHeight="555.0" fitWidth="890.0" pickOnBounds="true">
          <image>
             <Image url="@../resource/candy-world-game-background-with-title-name-vector-6511517.jpg" />
          </image>
       </ImageView>
-      <ProgressBar fx:id="loadingBar" layoutX="214.0" layoutY="477.0" prefHeight="33.0" prefWidth="461.0" progress="0.0" />
+      <ProgressBar fx:id="loadingBar" layoutX="214.0" layoutY="477.0" prefHeight="33.0" prefWidth="461.0" progress="0.0" style="-fx-accent: pink; -fx-border-color: purple;" />
       <ImageView fitHeight="137.0" fitWidth="268.0" layoutX="328.0" layoutY="265.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../resource/Untitled-1.png" />

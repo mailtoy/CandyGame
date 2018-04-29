@@ -30,7 +30,7 @@ public class LoginController {
 			if (login.verifyUser() == 1) {
 				// can play
 				try {
-					FXMLLoader loader = new FXMLLoader(getClass().getResource("Game.fxml"));
+					FXMLLoader loader = new FXMLLoader(getClass().getResource("Loading.fxml"));
 					Stage stage = new Stage();
 					stage.setScene(new Scene((Parent) loader.load()));
 					stage.show();
@@ -49,7 +49,7 @@ public class LoginController {
 			if (login.verifyUser() == 0) {
 				// can play
 				try {
-					FXMLLoader loader = new FXMLLoader(getClass().getResource("Game.fxml"));
+					FXMLLoader loader = new FXMLLoader(getClass().getResource("Loading.fxml"));
 					Stage stage = new Stage();
 					stage.setScene(new Scene((Parent) loader.load()));
 					stage.show();
