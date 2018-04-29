@@ -21,6 +21,8 @@ public class RankingController {
         Stage stage = new Stage();
         stage.setScene(new Scene((Parent)loader.load()));
         stage.show();
+        Stage rankingStage = (Stage) backButton.getScene().getWindow();
+		rankingStage.close();
     
     }
 
