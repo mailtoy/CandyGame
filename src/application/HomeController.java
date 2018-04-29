@@ -17,12 +17,8 @@ public class HomeController {
 	private Button loginButton;
 	@FXML
 	private Button rankButton;
-	
 	@FXML
-	private ImageView loginImage;
-	
-	@FXML
-	private ImageView rankImage;
+	private Button signUpButton;
 	
 	public void login(ActionEvent event){
 		try {
@@ -31,6 +27,20 @@ public class HomeController {
 			stage.setScene(new Scene((Parent) loader.load()));
 			stage.show();
 			Stage loginStage = (Stage) loginButton.getScene().getWindow();
+			loginStage.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public void signUp(ActionEvent event){
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("SignUp.fxml"));
+			Stage stage = new Stage();
+			stage.setScene(new Scene((Parent) loader.load()));
+			stage.show();
+			Stage loginStage = (Stage) signUpButton.getScene().getWindow();
 			loginStage.close();
 		} catch (IOException e) {
 			e.printStackTrace();

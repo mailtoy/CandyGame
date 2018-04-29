@@ -14,6 +14,15 @@ public class LoginVerifyUser {
 		this.password = password;
 	}
 	
+	public String getId() {
+		return this.id;
+	}
+	
+	public String getPassword() {
+		return this.password;
+	}
+
+	
 	public int verifyUser() {
 		for (String aId : idList) {
 			for (String aPassword : passwordList) {

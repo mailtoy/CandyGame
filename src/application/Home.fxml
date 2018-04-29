@@ -12,12 +12,12 @@
             <Image url="@../resource/cartoon-fantasy-candy-land-location-vector-9653098.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="236.0" fitWidth="456.0" layoutX="233.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="236.0" fitWidth="456.0" layoutX="233.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../resource/Untitled-1.png" />
          </image>
       </ImageView>
-      <Button fx:id="loginButton" layoutX="331.0" layoutY="328.0" mnemonicParsing="false" onAction="#login" prefHeight="51.0" prefWidth="146.0" style="-fx-background-color: teansparent;">
+      <Button fx:id="loginButton" layoutX="331.0" layoutY="365.0" mnemonicParsing="false" onAction="#login" prefHeight="51.0" prefWidth="146.0" style="-fx-background-color: teansparent;">
          <graphic>
             <ImageView fitHeight="68.0" fitWidth="211.0" pickOnBounds="true">
                <image>
@@ -31,6 +31,15 @@
             <ImageView fitHeight="70.0" fitWidth="89.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../resource/PNG_Assets/PNG/btn_rank2_click.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="signUpButton" layoutX="330.0" layoutY="278.0" mnemonicParsing="false" onAction="#signUp" style="-fx-background-color: teansparent;">
+         <graphic>
+            <ImageView fitHeight="70.0" fitWidth="212.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../resource/signup_button.png" />
                </image>
             </ImageView>
          </graphic>
