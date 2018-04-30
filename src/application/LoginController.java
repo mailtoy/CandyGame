@@ -25,12 +25,9 @@ public class LoginController {
 	@FXML
 	public void enterGame(ActionEvent event) throws IOException {
 		LoginVerifyUser login = new LoginVerifyUser(id.getText(), password.getText());
-//		clearText();
 		try {
 				if (login.verifyUser() == 0) {
 					// can play
-					System.out.println(id.getText().isEmpty());
-					System.out.println(password.getText().isEmpty());
 					if (id.getText().isEmpty() && !password.getText().isEmpty()) {
 						status.setText("Please input your ID!");
 					}else if (password.getText().isEmpty() && !id.getText().isEmpty()) { // has just id, no password
@@ -38,7 +35,6 @@ public class LoginController {
 					} else if (id.getText().isEmpty() && password.getText().isEmpty()) {
 						status.setText("Please input your ID and password!");
 					} else {
-						System.out.println("not empty");
 						try {
 							FXMLLoader loader = new FXMLLoader(getClass().getResource("SignUp.fxml"));
 							Stage stage = new Stage();
@@ -50,11 +46,10 @@ public class LoginController {
 							e.printStackTrace();
 						}
 					}
-					System.out.println(id.getText().isEmpty());
-					System.out.println(password.getText().isEmpty());
 				}
 				// can login (have old id and pass)
 				if (login.verifyUser() == 1) {
+					
 					// can play
 					try {
 						FXMLLoader loader = new FXMLLoader(getClass().getResource("Loading.fxml"));

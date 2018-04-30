@@ -33,9 +33,11 @@ public class SignUpController {
 	public void enterGame(ActionEvent event) {
 		login = new LoginVerifyUser(idSignUp.getText(), passwordSignUp.getText());
 		try {
-			if (passwordSignUp.getText().equals("")) { // has just id, no password
+			if (idSignUp.getText().isEmpty() && passwordSignUp.getText().isEmpty()) {
+				status.setText("Please input your ID and password!");
+			}else if (passwordSignUp.getText().isEmpty()) { // has just id, no password
 				status.setText("Please input your password!");
-			} else if (idSignUp.getText().equals("")) {
+			} else if (idSignUp.getText().isEmpty()) {
 				status.setText("Please input your ID!");
 			} else {
 				if (login.verifyUser() == 0) { // new user
@@ -78,6 +80,7 @@ public class SignUpController {
 		if (!isUsed()) {
 			login.idList.add(idSignUp.getText());
 			login.passwordList.add(passwordSignUp.getText());
+			System.out.println("added user");
 		}
 	}
 
