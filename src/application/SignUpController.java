@@ -81,6 +81,7 @@ public class SignUpController {
 			login.idList.add(idSignUp.getText());
 			login.passwordList.add(passwordSignUp.getText());
 			System.out.println("added user");
+			System.out.println(login.idList);
 		}
 	}
 
