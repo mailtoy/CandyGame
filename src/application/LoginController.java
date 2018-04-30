@@ -27,9 +27,9 @@ public class LoginController {
 	private Label status;
 	public List<String> idList = new ArrayList<>();
 	public List<String> passwordList = new ArrayList<>();
-	private LoginVerifyUser user;
-	
-	public void signUpButton(){
+	private LoginVerifyUser loginUser;
+
+	public void signUpButton() {
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("SignUp.fxml"));
 			Stage stage = new Stage();
@@ -40,53 +40,56 @@ public class LoginController {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
+
 	}
 
 	@FXML
 	public void enterGame(ActionEvent event) throws IOException {
-		LoginVerifyUser login = new LoginVerifyUser(id.getText(), password.getText());
+		loginUser = LoginVerifyUser.getInstance();
+		String userLogin = id.getText();
+		String passL = password.getText();
 		try {
-				if (login.verifyUser() == 0) {
-					// can play
-					if (id.getText().isEmpty() && !password.getText().isEmpty()) {
-						status.setText("Please input your ID!");
-					}else if (password.getText().isEmpty() && !id.getText().isEmpty()) { // has just id, no password
-						status.setText("Please input your password!");
-					} else if (id.getText().isEmpty() && password.getText().isEmpty()) {
-						status.setText("Please input your ID and password!");
-					} else {
-						status.setText("Please sign up!");
-					}
+			if (loginUser.verifyUser(userLogin, passL) == 0) {
+				// can play
+				if (userLogin.isEmpty() && !passL.isEmpty()) {
+					status.setText("Please input your ID!");
+				} else if (passL.isEmpty() && !userLogin.isEmpty()) { // has
+																		// just
+																		// id,
+																		// no
+																		// password
+					status.setText("Please input your password!");
+				} else if (userLogin.isEmpty() && passL.isEmpty()) {
+					status.setText("Please input your ID and password!");
+				} else {
+					status.setText("Please sign up!");
 				}
-				// can login (have old id and pass)
-				if (login.verifyUser() == 1) {
-					
-					// can play
-					try {
-						FXMLLoader loader = new FXMLLoader(getClass().getResource("Loading.fxml"));
-						Stage stage = new Stage();
-						stage.setScene(new Scene((Parent) loader.load()));
-						stage.show();
-						Stage loginStage = (Stage) enterButton.getScene().getWindow();
-						loginStage.close();
-					} catch (IOException e) {
-						e.printStackTrace();
-					}
+			}
+			// can login (have old id and pass)
+			if (loginUser.verifyUser(userLogin, passL) == 1) {
+
+				// can play
+				try {
+					FXMLLoader loader = new FXMLLoader(getClass().getResource("Loading.fxml"));
+					Stage stage = new Stage();
+					stage.setScene(new Scene((Parent) loader.load()));
+					stage.show();
+					Stage loginStage = (Stage) enterButton.getScene().getWindow();
+					loginStage.close();
+				} catch (IOException e) {
+					e.printStackTrace();
 				}
-				// incorrect id and/or password
-				if (login.verifyUser() == 2) {
-					status.setText("Incorrect id and/or password");
-					// login again
-				}
-				// new user
+			}
+			// incorrect id and/or password
+			if (loginUser.verifyUser(userLogin, passL) == 2) {
+				status.setText("Incorrect id and/or password");
+				// login again
+			}
 		} catch (IllegalArgumentException e) {
 			status.setText("ERROR : " + e.getMessage());
 		} finally {
 
 		}
 	}
-
-	
 
 }

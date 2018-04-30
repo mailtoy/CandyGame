@@ -9,10 +9,19 @@ public class LoginVerifyUser {
 	public List<String> idList = new ArrayList<>();
 	public List<String> passwordList = new ArrayList<>();
 	public int isUser;
+	
+	/** Singleton **/
+	private static LoginVerifyUser instance;
 
-	public LoginVerifyUser(String id, String password) {
-		this.id = id;
-		this.password = password;
+	private LoginVerifyUser() {
+
+	}
+
+	public static LoginVerifyUser getInstance() {
+		if (instance == null) {
+			instance = new LoginVerifyUser();
+		}
+		return instance;
 	}
 
 	public String getId() {
@@ -23,23 +32,13 @@ public class LoginVerifyUser {
 		return this.password;
 	}
 
-	public int verifyUser() {
+	public int verifyUser(String id, String password) {
 		if (idList.contains(id) && passwordList.contains(password)) {
 			return 1;
 		} else if (!idList.contains(id) && passwordList.contains(password)
 				|| idList.contains(id) && !passwordList.contains(password)) {
 			return 2;
 		}
-		// for (String aId : idList) {
-		// for (String aPassword : passwordList) {
-		// if (id.equals(aId) && password.equals(aPassword) ) {
-		// return 1;
-		// } if (id.equals(aId) && !password.equals(aPassword) ||
-		// !id.equals(aId) && !password.equals(aPassword)) {
-		// return 2;
-		// }
-		// }
-		// }
 		return 0;
 	}
 

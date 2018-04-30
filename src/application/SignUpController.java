@@ -27,20 +27,22 @@ public class SignUpController {
 	private Label status;
 
 	private boolean isUsed = false;
-	private LoginVerifyUser login;
+	private LoginVerifyUser signUp;
 
 	@FXML
 	public void enterGame(ActionEvent event) {
-		login = new LoginVerifyUser(idSignUp.getText(), passwordSignUp.getText());
+		signUp = LoginVerifyUser.getInstance();
+		String username = idSignUp.getText();
+		String passW = passwordSignUp.getText();
 		try {
-			if (idSignUp.getText().isEmpty() && passwordSignUp.getText().isEmpty()) {
+			if (username.isEmpty() && passW.isEmpty()) {
 				status.setText("Please input your ID and password!");
-			}else if (passwordSignUp.getText().isEmpty()) { // has just id, no password
+			} else if (passW.isEmpty()) { // has just id, no password
 				status.setText("Please input your password!");
-			} else if (idSignUp.getText().isEmpty()) {
+			} else if (username.isEmpty()) {
 				status.setText("Please input your ID!");
 			} else {
-				if (login.verifyUser() == 0) { // new user
+				if (signUp.verifyUser(username, passW) == 0) { // new user
 					// has id and password
 					addUser();
 					try {
@@ -55,7 +57,7 @@ public class SignUpController {
 					}
 
 				}
-				if (login.verifyUser() == 1) { // repeat sign up
+				if (signUp.verifyUser(username, passW) == 1) { // repeat sign up
 					status.setText("This ID has been used already");
 
 				}
@@ -67,7 +69,7 @@ public class SignUpController {
 	}
 
 	public boolean isUsed() {
-		if (login.idList.contains(idSignUp.getText())) {
+		if (signUp.idList.contains(idSignUp.getText())) {
 			isUsed = true;
 			return isUsed;
 		} else {
@@ -78,10 +80,10 @@ public class SignUpController {
 
 	public void addUser() {
 		if (!isUsed()) {
-			login.idList.add(idSignUp.getText());
-			login.passwordList.add(passwordSignUp.getText());
+			signUp.idList.add(idSignUp.getText().toString());
+			signUp.passwordList.add(passwordSignUp.getText().toString());
 			System.out.println("added user");
-			System.out.println(login.idList);
+			System.out.println(signUp.idList);
 		}
 	}
 
