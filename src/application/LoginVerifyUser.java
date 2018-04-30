@@ -1,12 +1,13 @@
 package application;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class LoginVerifyUser {
 	public String id;
 	public String password;
-	public List<String> idList;
-	public List<String> passwordList;
+	public List<String> idList = new ArrayList<>();
+	public List<String> passwordList = new ArrayList<>();
 	public int isUser;
 	
 	public LoginVerifyUser(String id, String password) {

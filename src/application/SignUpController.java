@@ -32,15 +32,13 @@ public class SignUpController {
 	@FXML
 	public void enterGame(ActionEvent event) {
 		login = new LoginVerifyUser(idSignUp.getText(), passwordSignUp.getText());
-		status.setText("");
 		try {
-			if (passwordSignUp.getText().equals("")) { // has just id, no
-														// password
+			if (passwordSignUp.getText().equals("")) { // has just id, no password
 				status.setText("Please input your password!");
+			} else if (idSignUp.getText().equals("")) {
+				status.setText("Please input your ID!");
 			} else {
-
 				if (login.verifyUser() == 0) { // new user
-
 					// has id and password
 					addUser();
 					try {
@@ -82,5 +80,6 @@ public class SignUpController {
 			login.passwordList.add(passwordSignUp.getText());
 		}
 	}
+
 
 }
