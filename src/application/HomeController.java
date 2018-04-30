@@ -19,6 +19,8 @@ public class HomeController {
 	private Button rankButton;
 	@FXML
 	private Button signUpButton;
+	@FXML
+	private Button exitButton;
 	
 	public void login(ActionEvent event){
 		try {
@@ -60,6 +62,10 @@ public class HomeController {
 			e.printStackTrace();
 		}
 		
+	}
+	
+	public void exitGame(ActionEvent event){
+		System.exit(0);
 	}
 	
 	

@@ -44,5 +44,14 @@
             </ImageView>
          </graphic>
       </Button>
+      <Button fx:id="exitButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#exitGame" prefHeight="62.0" prefWidth="59.0" style="-fx-background-color: teansparent;">
+         <graphic>
+            <ImageView fitHeight="70.0" fitWidth="89.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resource/PNG_Assets/PNG/btn_close_disabled.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
    </children>
 </AnchorPane>

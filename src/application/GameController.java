@@ -54,10 +54,6 @@ public class GameController {
 		timeBar.progressProperty().bind(timeWorker.progressProperty());
 		new Thread(timeWorker).start();
 	}
-	
-	public void stopTime(){
-		//TODO
-	}
 
 	public Task createWorker() {
 		return new Task() {

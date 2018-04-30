@@ -29,7 +29,7 @@ public class LoginController {
 	public List<String> passwordList = new ArrayList<>();
 	private LoginVerifyUser loginUser;
 
-	public void signUpButton() {
+	public void signUpButton(ActionEvent event) {
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("SignUp.fxml"));
 			Stage stage = new Stage();
