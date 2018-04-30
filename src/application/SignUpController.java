@@ -35,7 +35,7 @@ public class SignUpController {
 		try {
 			if (idSignUp.getText().isEmpty() && passwordSignUp.getText().isEmpty()) {
 				status.setText("Please input your ID and password!");
-			} else if (passwordSignUp.getText().isEmpty()) { // has just id, no password
+			}else if (passwordSignUp.getText().isEmpty()) { // has just id, no password
 				status.setText("Please input your password!");
 			} else if (idSignUp.getText().isEmpty()) {
 				status.setText("Please input your ID!");
