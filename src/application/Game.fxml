@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="890.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.GameController">
    <children>
       <ImageView fitHeight="555.0" fitWidth="890.0" pickOnBounds="true">
@@ -15,18 +14,12 @@
             <Image url="@../resource/beautiful-fantasy-sweet-world-background-vector-14017535.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="346.0" layoutX="8.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../resource/stock-vector-cute-cartoon-game-assets-set-orange-glossy-buttons-panel-and-progress-bar-for-gui-design-on-sweet-397681075.png" />
-         </image>
-      </ImageView>
-      <ProgressBar fx:id="timeBar" layoutX="21.0" layoutY="24.0" prefHeight="30.0" prefWidth="292.0" progress="0.0" />
       <ImageView fitHeight="68.0" fitWidth="247.0" layoutX="629.0" layoutY="15.0" pickOnBounds="true">
          <image>
             <Image url="@../../../../../Desktop/Candy_Game_UI_FIles/PNG_Assets/PNG@4x/data_diamond@4x.png" />
          </image>
       </ImageView>
-      <Label fx:id="scoreLabel" alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="716.0" layoutY="30.0" prefHeight="29.0" prefWidth="134.0" textFill="WHITE">
+      <Label fx:id="scoreLabel" alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="716.0" layoutY="30.0" prefHeight="29.0" prefWidth="134.0" text="0" textFill="WHITE">
          <font>
             <Font name="Impact" size="30.0" />
          </font>
@@ -36,5 +29,11 @@
             <Font name="Impact" size="48.0" />
          </font>
       </Label>
+      <ImageView fitHeight="38.0" fitWidth="429.0" layoutX="23.0" layoutY="23.0" pickOnBounds="true">
+         <image>
+            <Image url="@../resource/31498203_1836561713050232_5703196169375580160_n.png" />
+         </image>
+      </ImageView>
+      <ProgressBar fx:id="timeBar" layoutX="38.0" layoutY="32.0" prefHeight="18.0" prefWidth="395.0" progress="0.0" style="-fx-accent: pink; -fx-background-color: purple; -fx-border-color: purple;" />
    </children>
 </AnchorPane>

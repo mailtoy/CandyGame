@@ -16,9 +16,9 @@ import javafx.stage.Stage;
 public class LoadingController {
 	@FXML
 	private ProgressBar loadingBar;
-	private Task<Boolean> copyWorker;
 	@FXML
 	private Button tButton;
+	private Task<Boolean> copyWorker;
 
 	@FXML
 	public void initialize() {
@@ -56,9 +56,9 @@ public class LoadingController {
 		return new Task() {
 			@Override
 			protected Object call() throws Exception {
-				for (int i = 0; i < 5; i++) {
-					Thread.sleep(900);
-					updateProgress(i + 1, 5);
+				for (int i = 0; i < 1000; i++) {
+					Thread.sleep(5);
+					updateProgress(i + 1, 1000);
 				}
 				return true;
 			}
