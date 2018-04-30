@@ -36,5 +36,7 @@ public class LoginVerifyUser {
 		return 0;
 	}
 	
+	
+	
 
 }

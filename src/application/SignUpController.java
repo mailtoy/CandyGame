@@ -32,10 +32,15 @@ public class SignUpController {
 	@FXML
 	public void enterGame(ActionEvent event) {
 		login = new LoginVerifyUser(idSignUp.getText(), passwordSignUp.getText());
-
+		status.setText("");
 		try {
+			
 			if (login.verifyUser() == 0) { // new user
-				// can play
+				if(passwordSignUp.getText().equals("")){ // has just id, no password
+					status.setText("Please input your password!");
+				}			
+				// has id and password
+				addUser();
 				try {
 					FXMLLoader loader = new FXMLLoader(getClass().getResource("Loading.fxml"));
 					Stage stage = new Stage();
@@ -46,16 +51,20 @@ public class SignUpController {
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
+				
 			}
-			addUser();
+			if (login.verifyUser() == 1) { // repeat sign up 
+				status.setText("This ID has been used already");
+				
+			}
 			
 		} catch (IllegalArgumentException e) {
 			status.setText("ERROR : " + e.getMessage());
 		}
 	}
-
+	
 	public boolean isUsed() {
-		if (login.idList.contains(idSignUp)) {
+		if (login.idList.contains(idSignUp.getText())) {
 			isUsed = true;
 			return isUsed;
 		} else {
@@ -70,5 +79,7 @@ public class SignUpController {
 			login.passwordList.add(passwordSignUp.getText());
 		}
 	}
+
+	
 
 }

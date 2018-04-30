@@ -21,6 +21,9 @@ public class LoginController {
 	private Button enterButton;
 	@FXML
 	private Label status;
+	
+	
+	private LoginVerifyUser login;
 
 	@FXML
 	public void enterGame(ActionEvent event) throws IOException {
@@ -49,12 +52,12 @@ public class LoginController {
 			if (login.verifyUser() == 0) {
 				// can play
 				try {
-					FXMLLoader loader = new FXMLLoader(getClass().getResource("Loading.fxml"));
+					FXMLLoader loader = new FXMLLoader(getClass().getResource("SignUp.fxml"));
 					Stage stage = new Stage();
 					stage.setScene(new Scene((Parent) loader.load()));
 					stage.show();
-					Stage loginStage = (Stage) enterButton.getScene().getWindow();
-					loginStage.close();
+					Stage signUpStage = (Stage) enterButton.getScene().getWindow();
+					signUpStage.close();
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
@@ -65,5 +68,9 @@ public class LoginController {
 
 		}
 	}
+	
+	
+	
+	
 
 }
