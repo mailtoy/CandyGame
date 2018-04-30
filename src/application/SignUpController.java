@@ -2,6 +2,8 @@ package application;
 
 import java.io.IOException;
 
+import backend.DataTable;
+import backend.UserConnectData;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -28,6 +30,7 @@ public class SignUpController {
 
 	private boolean isUsed = false;
 	private LoginVerifyUser signUp;
+	private UserConnectData data = UserConnectData.getInstance();
 
 	@FXML
 	public void enterGame(ActionEvent event) {
@@ -42,9 +45,10 @@ public class SignUpController {
 			} else if (username.isEmpty()) {
 				status.setText("Please input your ID!");
 			} else {
-				if (signUp.verifyUser(username, passW) == 0) { // new user
+				if (!data.isUserExist(username)) { // new user
 					// has id and password
-					addUser();
+//					addUser();
+					data.createUser(new DataTable(username, passW));
 					try {
 						FXMLLoader loader = new FXMLLoader(getClass().getResource("Login.fxml"));
 						Stage stage = new Stage();
@@ -57,7 +61,7 @@ public class SignUpController {
 					}
 
 				}
-				if (signUp.verifyUser(username, passW) == 1) { // repeat sign up
+				else { // repeat sign up
 					status.setText("This ID has been used already");
 
 				}
@@ -78,13 +82,13 @@ public class SignUpController {
 		}
 	}
 
-	public void addUser() {
-		if (!isUsed()) {
-			signUp.idList.add(idSignUp.getText().toString());
-			signUp.passwordList.add(passwordSignUp.getText().toString());
-			System.out.println("added user");
-			System.out.println(signUp.idList);
-		}
-	}
+//	public void addUser() {
+//		if (!isUsed()) {
+//			signUp.idList.add(idSignUp.getText().toString());
+//			signUp.passwordList.add(passwordSignUp.getText().toString());
+//			System.out.println("added user");
+//			System.out.println(signUp.idList);
+//		}
+//	}
 
 }

@@ -20,9 +20,6 @@ public class ReplayMain extends Application {
 			scene.setFill(Color.TRANSPARENT);
 			primaryStage.initStyle(StageStyle.TRANSPARENT);
 			primaryStage.show();
-			
-			
-			
 		} catch(Exception e) {
 			e.printStackTrace();
 		}

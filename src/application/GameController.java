@@ -9,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.stage.Stage;
@@ -21,6 +22,10 @@ public class GameController {
 	@FXML 
 	private Label wordLable;
 	private Task<Boolean> timeWorker;
+	@FXML
+	private Button pause;
+	@FXML
+	private Button play;
 	
 	@FXML
 	public void initialize() {
@@ -40,8 +45,25 @@ public class GameController {
 			e.printStackTrace();
 		}
 	}
+	
+	@FXML
+    private void stopAction()
+    {
+       //when cancel button is clicked it will end the task created and
+        timeWorker.cancel(true);
+      //unbinds progress indicator from that task
+         timeBar.progressProperty().unbind();
+     //set it to 0
+//         timeBar.setProgress(0);
+//        start.setDisable(false);
+    }
+	
 
 	public void time() {
+		//setDisable() is used to enable or disable the elements
+        pause.setDisable(false);
+//        start.setDisable(true);
+        
 		timeBar.setProgress(0);
 		timeWorker = createWorker();
 		timeWorker.setOnSucceeded(new EventHandler<WorkerStateEvent>() {
@@ -63,6 +85,7 @@ public class GameController {
 					Thread.sleep(125);
 					updateProgress(i + 1,480 );
 				}
+				timeWorker.cancel(true);
 				return true;
 			}
 		};
