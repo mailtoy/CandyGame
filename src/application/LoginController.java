@@ -29,6 +29,19 @@ public class LoginController {
 	public void enterGame(ActionEvent event) throws IOException {
 		LoginVerifyUser login = new LoginVerifyUser(id.getText(), password.getText());
 		try {
+			if (login.verifyUser() == 0) {
+				// can play
+				try {
+					FXMLLoader loader = new FXMLLoader(getClass().getResource("SignUp.fxml"));
+					Stage stage = new Stage();
+					stage.setScene(new Scene((Parent) loader.load()));
+					stage.show();
+					Stage signUpStage = (Stage) enterButton.getScene().getWindow();
+					signUpStage.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
 			// can login (have old id and pass)
 			if (login.verifyUser() == 1) {
 				// can play
@@ -49,19 +62,7 @@ public class LoginController {
 				// login again
 			}
 			// new user
-			if (login.verifyUser() == 0) {
-				// can play
-				try {
-					FXMLLoader loader = new FXMLLoader(getClass().getResource("SignUp.fxml"));
-					Stage stage = new Stage();
-					stage.setScene(new Scene((Parent) loader.load()));
-					stage.show();
-					Stage signUpStage = (Stage) enterButton.getScene().getWindow();
-					signUpStage.close();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-			}
+			
 		} catch (IllegalArgumentException e) {
 			status.setText("ERROR : " + e.getMessage());
 		} finally {
