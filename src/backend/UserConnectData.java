@@ -37,33 +37,16 @@ public class UserConnectData {
 
 	}
 
-	/**
-	 * start and get the connection source
-	 * 
-	 * @return the connection source
-	 * @throws SQLException
-	 */
 	public static UserConnectData getInstance() {
 		if (databaseConnect == null)
 			databaseConnect = new UserConnectData();
 		return databaseConnect;
 	}
 
-	/**
-	 * close the connection source
-	 * 
-	 * @throws IOException
-	 */
 	public void closeConnect() throws IOException {
 		connectionSource.close();
 	}
 
-	/**
-	 * get all users data in database.
-	 * 
-	 * @throws SQLException
-	 *             when application can't connect to the database
-	 */
 	public List<DataTable> pullAllUserdata() {
 		try {
 			getDetailUser = userDao.queryForAll();
@@ -73,14 +56,6 @@ public class UserConnectData {
 		return getDetailUser;
 	}
 
-	/**
-	 * Checking an input user account is already exist, or not.
-	 * 
-	 * @param id
-	 *            is id of account (id is username)
-	 * @return true if the input user account is already exist, otherwise return
-	 *         false.
-	 */
 	public boolean isUserExist(String username) {
 		DataTable userTable = null;
 		try {
@@ -92,12 +67,6 @@ public class UserConnectData {
 		return userTable != null;
 	}
 
-	/**
-	 * Creating input account in the database.
-	 * 
-	 * @param userToAdd
-	 *            is new account to create in the database.
-	 */
 	public void createUser(DataTable userToAdd) {
 		try {
 			userDao.createIfNotExists(userToAdd);
@@ -106,11 +75,6 @@ public class UserConnectData {
 		}
 	}
 	
-	/**
-	 * update this user data on the database
-	 * 
-	 * @param user
-	 */
 	public void updateUserData(DataTable user) {
 		try {
 			double wpm = 0;

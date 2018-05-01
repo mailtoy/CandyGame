@@ -26,12 +26,6 @@ public class LogicGame {
 		words = readWords();
 	}
 
-	/**
-	 * Read word from a text file and get its into a list of String. Return that
-	 * list.
-	 * 
-	 * @return a list of String that contains many word from the file.
-	 */
 	public List<String> readWords() {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(in));
 		List<String> list = new ArrayList<String>();
@@ -49,11 +43,6 @@ public class LogicGame {
 		return list;
 	}
 
-	/**
-	 * Return a random word from the list of String.
-	 * 
-	 * @return
-	 */
 	public String getWord() {
 		Random random = new Random();
 		return words.get(random.nextInt(words.size() - 1));
