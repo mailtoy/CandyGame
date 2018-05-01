@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="890.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.GameController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="890.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.GameController">
    <children>
       <ImageView fitHeight="555.0" fitWidth="890.0" pickOnBounds="true">
          <image>
@@ -17,7 +17,7 @@
       </ImageView>
       <ImageView fitHeight="68.0" fitWidth="247.0" layoutX="629.0" layoutY="15.0" pickOnBounds="true">
          <image>
-            <Image url="@../../../../../Desktop/Candy_Game_UI_FIles/PNG_Assets/PNG@4x/data_diamond@4x.png" />
+            <Image url="@../resource/PNG_Assets/PNG/data_diamond.png" />
          </image>
       </ImageView>
       <Label fx:id="scoreLabel" alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="716.0" layoutY="30.0" prefHeight="29.0" prefWidth="134.0" text="0" textFill="WHITE">

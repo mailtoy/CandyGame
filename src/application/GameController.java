@@ -64,7 +64,7 @@ public class GameController {
         pause.setDisable(false);
 //        start.setDisable(true);
         
-		timeBar.setProgress(0);
+		timeBar.setProgress(1);
 		timeWorker = createWorker();
 		timeWorker.setOnSucceeded(new EventHandler<WorkerStateEvent>() {
 			@Override
@@ -81,9 +81,9 @@ public class GameController {
 		return new Task() {
 			@Override
 			protected Object call() throws Exception {
-				for (int i = 0; i < 480; i++) {
+				for (int i = 480; i >= 0; i--) {
 					Thread.sleep(125);
-					updateProgress(i + 1,480 );
+					updateProgress(i - 1,480 );
 				}
 				timeWorker.cancel(true);
 				return true;
