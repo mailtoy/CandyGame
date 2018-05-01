@@ -17,7 +17,7 @@ public class RankingController {
     
     @FXML
     public void handleBackPage(ActionEvent event) throws IOException{
-    	FXMLLoader loader = new FXMLLoader(getClass().getResource("Login.fxml")); 
+    	FXMLLoader loader = new FXMLLoader(getClass().getResource("Home.fxml")); 
         Stage stage = new Stage();
         stage.setScene(new Scene((Parent)loader.load()));
         stage.show();

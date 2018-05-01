@@ -28,6 +28,7 @@ public class GameController {
 	@FXML
 	private Button play;
 	
+	
 	@FXML
 	public void initialize() {
 		time();
@@ -65,17 +66,30 @@ public class GameController {
 		//setDisable() is used to enable or disable the elements
         pause.setDisable(false);
 //        start.setDisable(true);
-        System.out.println("enter");
 		timeBar.setProgress(1);
 		timeWorker = createWorker();
+		// show replay when it success
 		timeWorker.setOnSucceeded(new EventHandler<WorkerStateEvent>() {
 			@Override
 			public void handle(WorkerStateEvent event) {
-				System.out.println("next scene");
+				System.out.println("success");
 				nextScene();
 			}
 		});
-		System.out.println("out");
+		// print "running" when it is not success but it is running
+		timeWorker.setOnRunning(new EventHandler<WorkerStateEvent>() {
+			@Override
+			public void handle(WorkerStateEvent event) {
+				System.out.println("running");
+			}
+		});
+		// print "failed" when it is not success but it is failed
+		timeWorker.setOnFailed (new EventHandler<WorkerStateEvent>() {
+			@Override
+			public void handle(WorkerStateEvent event) {
+				System.out.println("failed");
+			}
+		});
 		timeBar.progressProperty().unbind();
 		timeBar.progressProperty().bind(timeWorker.progressProperty());
 		new Thread(timeWorker).start();
@@ -85,9 +99,9 @@ public class GameController {
 		return new Task() {
 			@Override
 			protected Object call() throws Exception {
-				for (int i = 10; i >= 0; i--) {
+				for (int i = 480; i >= 0; i--) {
 					Thread.sleep(125);
-					updateProgress(i - 1, 10 );
+					updateProgress(i - 1, 480 );
 				}
 				timeWorker.cancel(true);
 				return true;
