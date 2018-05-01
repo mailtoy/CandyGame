@@ -28,6 +28,7 @@ public class ReplayController {
     @FXML
     private void backHome(ActionEvent event){
     	try {
+    		System.out.println("qwertyui");
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("Home.fxml"));
 			Stage stage = new Stage();
 			stage.setScene(new Scene((Parent) loader.load()));

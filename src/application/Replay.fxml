@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="890.0" style="-fx-background-color: TRANSPARENT;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ReplayController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="890.0" style="-fx-background-color: TRANSPARENT;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ReplayController">
    <children>
       <ImageView fitHeight="461.0" fitWidth="338.0" layoutX="276.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -19,8 +19,8 @@
             <Font name="Impact" size="53.0" />
          </font>
       </Label>
-      <Button fx:id="homeButton" layoutX="83.0" layoutY="552.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#backHome" prefHeight="86.0" prefWidth="88.0" style="-fx-background-color: teansparent;" />
-      <Button fx:id="replayButton" layoutX="198.0" layoutY="522.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#playAgain" prefHeight="105.0" prefWidth="102.0" style="-fx-background-color: teansparent;" />
-      <Button fx:id="rankingButton" layoutX="324.0" layoutY="555.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#showRanking" prefHeight="86.0" prefWidth="88.0" style="-fx-background-color: teansparent;" />
+      <Button fx:id="homeButton" layoutX="324.0" layoutY="398.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#backHome" prefHeight="66.0" prefWidth="70.0" style="-fx-background-color: teansparent;" />
+      <Button fx:id="replayButton" layoutX="404.0" layoutY="378.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#playAgain" prefHeight="80.0" prefWidth="78.0" style="-fx-background-color: teansparent;" />
+      <Button fx:id="rankingButton" layoutX="489.0" layoutY="398.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#showRanking" prefHeight="66.0" prefWidth="70.0" style="-fx-background-color: teansparent;" />
    </children>
 </AnchorPane>

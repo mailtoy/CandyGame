@@ -12,6 +12,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class GameController {
@@ -38,9 +39,10 @@ public class GameController {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("Replay.fxml"));
 			Stage stage = new Stage();
 			stage.setScene(new Scene((Parent) loader.load()));
+			stage.initModality(Modality.APPLICATION_MODAL);
 			stage.show();
-			Stage loginStage = (Stage) timeBar.getScene().getWindow();
-			loginStage.close();
+			Stage replayStage = (Stage) timeBar.getScene().getWindow();
+			replayStage.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -63,15 +65,17 @@ public class GameController {
 		//setDisable() is used to enable or disable the elements
         pause.setDisable(false);
 //        start.setDisable(true);
-        
+        System.out.println("enter");
 		timeBar.setProgress(1);
 		timeWorker = createWorker();
 		timeWorker.setOnSucceeded(new EventHandler<WorkerStateEvent>() {
 			@Override
 			public void handle(WorkerStateEvent event) {
+				System.out.println("next scene");
 				nextScene();
 			}
 		});
+		System.out.println("out");
 		timeBar.progressProperty().unbind();
 		timeBar.progressProperty().bind(timeWorker.progressProperty());
 		new Thread(timeWorker).start();
@@ -81,13 +85,15 @@ public class GameController {
 		return new Task() {
 			@Override
 			protected Object call() throws Exception {
-				for (int i = 480; i >= 0; i--) {
+				for (int i = 10; i >= 0; i--) {
 					Thread.sleep(125);
-					updateProgress(i - 1,480 );
+					updateProgress(i - 1, 10 );
 				}
 				timeWorker.cancel(true);
 				return true;
 			}
+			
 		};
 	}
+	
 }
