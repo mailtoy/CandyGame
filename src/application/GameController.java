@@ -2,6 +2,7 @@ package application;
 
 import java.io.IOException;
 
+import game.LogicGame;
 import javafx.concurrent.Task;
 import javafx.concurrent.WorkerStateEvent;
 import javafx.event.EventHandler;
@@ -20,20 +21,33 @@ public class GameController {
 	private ProgressBar timeBar;
 	@FXML
 	private Label scoreLabel;
-	@FXML 
+	@FXML
 	private Label wordLable;
 	private Task<Boolean> timeWorker;
 	@FXML
 	private Button pause;
-	@FXML
-	private Button play;
-	
+	public int score;
+	private boolean isStop = false;
+	private LogicGame game;
+	private String currentWord;
 	
 	@FXML
 	public void initialize() {
+		setGame(new LogicGame());
 		time();
+		score();
 	}
 
+	public void setGame(LogicGame game) {
+		this.game = game;
+	}
+	
+	public void game(){
+		currentWord = game.getWord();
+		System.out.println(currentWord);
+		wordLable.setText(currentWord.toString());
+	}
+	
 	// pop-up show score, highsore, replaybutton
 	public void nextScene() {
 		try {
@@ -42,40 +56,31 @@ public class GameController {
 			stage.setScene(new Scene((Parent) loader.load()));
 			stage.initModality(Modality.APPLICATION_MODAL);
 			stage.show();
-			Stage replayStage = (Stage) timeBar.getScene().getWindow();
-			replayStage.close();
+			 Stage replayStage = (Stage) timeBar.getScene().getWindow();
+			 replayStage.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	@FXML
-    private void stopAction()
-    {
-       //when cancel button is clicked it will end the task created and
-        timeWorker.cancel(true);
-      //unbinds progress indicator from that task
-         timeBar.progressProperty().unbind();
-     //set it to 0
-//         timeBar.setProgress(0);
-//        start.setDisable(false);
-    }
-	
+	private void stopAction() {
+		if (isStop) {
+			isStop = false;
+		} else 
+			isStop = true;
+		// when cancel button is clicked it will end the task created and
+		timeWorker.cancel(true);
+		// unbinds progress indicator from that task
+		timeBar.progressProperty().unbind();
+	}
 
 	public void time() {
-		//setDisable() is used to enable or disable the elements
-        pause.setDisable(false);
-//        start.setDisable(true);
-		timeBar.setProgress(1);
+		game();
+		// setDisable() is used to enable or disable the elements
+		pause.setDisable(false);
+		timeBar.setProgress(0);
 		timeWorker = createWorker();
-		// show replay when it success
-		timeWorker.setOnSucceeded(new EventHandler<WorkerStateEvent>() {
-			@Override
-			public void handle(WorkerStateEvent event) {
-				System.out.println("success");
-				nextScene();
-			}
-		});
 		// print "running" when it is not success but it is running
 		timeWorker.setOnRunning(new EventHandler<WorkerStateEvent>() {
 			@Override
@@ -84,30 +89,45 @@ public class GameController {
 			}
 		});
 		// print "failed" when it is not success but it is failed
-		timeWorker.setOnFailed (new EventHandler<WorkerStateEvent>() {
+		timeWorker.setOnFailed(new EventHandler<WorkerStateEvent>() {
 			@Override
 			public void handle(WorkerStateEvent event) {
 				System.out.println("failed");
+			}
+		});
+		// show replay when it success
+		timeWorker.setOnSucceeded(new EventHandler<WorkerStateEvent>() {
+			@Override
+			public void handle(WorkerStateEvent event) {
+				System.out.println("success");
+				nextScene();
 			}
 		});
 		timeBar.progressProperty().unbind();
 		timeBar.progressProperty().bind(timeWorker.progressProperty());
 		new Thread(timeWorker).start();
 	}
+	
+	public void score(){
+		scoreLabel.setText("0");
+	}
 
 	public Task createWorker() {
 		return new Task() {
 			@Override
 			protected Object call() throws Exception {
-				for (int i = 480; i >= 0; i--) {
-					Thread.sleep(125);
-					updateProgress(i - 1, 480 );
+				for (int i = 0; i <= 480; i++) {
+					if (isStop) {
+						break;
+					}
+					Thread.sleep(10);
+					updateProgress(i + 1, 480);
+					scoreLabel.setText("1");
 				}
-				timeWorker.cancel(true);
 				return true;
 			}
-			
+
 		};
 	}
-	
+
 }
