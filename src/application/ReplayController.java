@@ -25,21 +25,23 @@ public class ReplayController {
 
     @FXML
     private Button rankingButton; 
-    
-    private LogicGame game;
-    
-    public void setGame(LogicGame game) {
-		this.game = game;
-	} 
-    
-    public void initialize() {
-    	setGame(new LogicGame());
-    	showScoreLable();
+    private int score;
+
+    public int  getScore() {
+		return score;
+	}
+	
+	public void setScore(int score) {
+		this.score = score;
+		System.out.println(score+" set");
+	}
+	
+    public void showScoreLable(){
+    	showScore.setText(score+"");
     }
     
-    public void showScoreLable(){
-    	System.out.println(game.getScore() + " point");
-    	showScore.setText(game.getScore());
+    public void initialize() {
+    	showScoreLable();
     }
     
     @FXML
