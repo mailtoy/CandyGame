@@ -34,9 +34,10 @@ public class GameController {
 	@FXML
 	private TextField answer;
 	
-	private static int score;
+	private int score;
 	private boolean isStop = false;
 	private LogicGame game;
+	private ReplayController replay;
 	private String currentWord;
 	
 	@FXML
@@ -48,6 +49,10 @@ public class GameController {
 
 	public void setGame(LogicGame game) {
 		this.game = game;
+	}
+	
+	public void setReplayControler(ReplayController replay) {
+		this.replay = replay;
 	}
 	
 	public void game(){
@@ -94,7 +99,7 @@ public class GameController {
 			@Override
 			public void handle(WorkerStateEvent event) {
 				System.out.println("success");
-				System.out.println(game.getScore()+"");
+				System.out.println("Total score : " + game.getScore()+"");
 				nextScene();
 			}
 		});
@@ -111,6 +116,7 @@ public class GameController {
 			game.setScore(scoreText);
 			String scoreWord = game.getScore() + "";
 			scoreLabel.setText(scoreWord);
+			System.out.println("score : "+ score);
 			answer.clear();
 			game();
 		}

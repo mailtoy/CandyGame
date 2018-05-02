@@ -23,6 +23,10 @@ public class GameMain extends Application {
 	}
 	
 	public static void main(String[] args) {
+//		GameController game = new GameController();
+//		ReplayController replay = new ReplayController();
+//		game.setReplayControler(replay);
+//		replay.showScoreLable();
 		launch(args);
 	}
 

@@ -28,14 +28,9 @@ public class ReplayController {
     
     private LogicGame game;
     
-    public void setGame(LogicGame game) {
-		this.game = game;
-	} 
-    
-    public void initialize() {
-    	setGame(new LogicGame());
-    	showScoreLable();
-    }
+//    public void setGame(LogicGame game) {
+//		this.game = game;
+//	} 
     
     public void showScoreLable(){
     	System.out.println(game.getScore() + " point");
