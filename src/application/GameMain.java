@@ -4,7 +4,6 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class GameMain extends Application {
@@ -23,9 +22,12 @@ public class GameMain extends Application {
 	}
 	
 	public static void main(String[] args) {
+<<<<<<< HEAD
 		GameController game = new GameController();
 		ReplayController replay = new ReplayController();
 		replay.setGame(game.getGame());
+=======
+>>>>>>> d5b41df0d57c570556bb2d957dc2a232c90ab583
 		launch(args);
 	}
 

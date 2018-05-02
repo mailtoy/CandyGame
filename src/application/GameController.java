@@ -5,6 +5,7 @@ import java.io.IOException;
 import game.LogicGame;
 import javafx.concurrent.Task;
 import javafx.concurrent.WorkerStateEvent;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -29,16 +30,13 @@ public class GameController {
 	private Task<Boolean> timeWorker;
 	
 	@FXML
-	private Button pause;
-	
-	@FXML
 	private TextField answer;
 	
 	private int score;
-	private boolean isStop = false;
 	private LogicGame game;
 	private ReplayController replay;
 	private String currentWord;
+	private String scoreText = "";
 	
 	@FXML
 	public void initialize() {
@@ -74,24 +72,14 @@ public class GameController {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("Replay.fxml"));
 			Stage stage = new Stage();
 			stage.setScene(new Scene((Parent) loader.load()));
+			ReplayController rController = loader.getController();
+			rController.setScore(score);
 			stage.show();
 			Stage signUpStage = (Stage) timeBar.getScene().getWindow();
 			signUpStage.close();
-		} catch (IOException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	}
-
-	@FXML
-	private void stopAction() {
-		if (isStop) {
-			isStop = false;
-		} else 
-			isStop = true;
-		// when cancel button is clicked it will end the task created and
-		timeWorker.cancel(true);
-		// unbinds progress indicator from that task
-		timeBar.progressProperty().unbind();
 	}
 
 	public void time() {
@@ -103,7 +91,8 @@ public class GameController {
 			@Override
 			public void handle(WorkerStateEvent event) {
 				System.out.println("success");
-				System.out.println("Total score : " + game.getScore()+"");
+
+				System.out.println(score);
 				nextScene();
 			}
 		});
@@ -113,12 +102,10 @@ public class GameController {
 	}
 	
 	public void checkWord(){
-		String scoreText = "";
 		if(wordLable.getText().equals(answer.getText())){
 			score += 100;
 			scoreText = score + "";
-			game.setScore(scoreText);
-			String scoreWord = game.getScore() + "";
+			String scoreWord = score + "";
 			scoreLabel.setText(scoreWord);
 			System.out.println("score : "+ score);
 			answer.clear();
@@ -131,9 +118,6 @@ public class GameController {
 			@Override
 			protected Object call() throws Exception {
 				for (int i = 0; i <= 1000; i++) {
-					if (isStop) {
-						break;
-					}
 					Thread.sleep(10);
 					updateProgress(i + 1, 1000);
 				}
