@@ -14,10 +14,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextField;
-import javafx.scene.paint.Color;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 public class GameController {
 	@FXML
@@ -47,6 +44,7 @@ public class GameController {
 	public void initialize() {
 		setGame(new LogicGame());
 		time();
+		game();
 //		score();
 	}
 
@@ -56,9 +54,12 @@ public class GameController {
 	
 	public void game(){
 		currentWord = game.getWord();
+		while (currentWord.length() != 7) {
+			currentWord = game.getWord();
+		}
 		wordLable.setText(currentWord);
 		System.out.println("current word : " +currentWord);
-		answer.setText("");
+//		answer.setText("");
 //		if(score == oldScore && score != 0 && oldScore != 0){
 //			currentWord = game.getWord();
 //			System.out.println(currentWord);
@@ -96,13 +97,12 @@ public class GameController {
 	}
 
 	public void time() {
-		game();
 		// setDisable() is used to enable or disable the elements
 //		pause.setDisable(false);
 		timeBar.setProgress(0);
 		timeWorker = createWorker();
 		// show replay when it success
-		checkWord();
+//		checkWord();
 		timeWorker.setOnSucceeded(new EventHandler<WorkerStateEvent>() {
 			@Override
 			public void handle(WorkerStateEvent event) {
@@ -122,6 +122,7 @@ public class GameController {
 			score += 100;
 			String scoreWord = score+"";
 			scoreLabel.setText(scoreWord);
+			answer.clear();
 			game();
 			System.out.println("current score : " + scoreLabel.getText());getClass();
 			System.out.println("next word : " + currentWord);
@@ -144,12 +145,9 @@ public class GameController {
 					}
 					Thread.sleep(10);
 					updateProgress(i + 1, 1000);
-					checkWord();
 				}
 				return true;
 			}
-
 		};
 	}
-
 }

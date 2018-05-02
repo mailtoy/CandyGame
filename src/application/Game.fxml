@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="890.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.GameController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="890.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.GameController">
    <children>
       <ImageView fitHeight="555.0" fitWidth="890.0" pickOnBounds="true">
          <image>
@@ -31,9 +31,9 @@
          </image>
       </ImageView>
       <ProgressBar fx:id="timeBar" layoutX="38.0" layoutY="32.0" prefHeight="18.0" prefWidth="395.0" progress="0.0" style="-fx-accent: pink; -fx-background-color: purple; -fx-border-color: purple;" />
-      <ImageView fitHeight="74.0" fitWidth="237.0" layoutX="342.0" layoutY="456.0" pickOnBounds="true">
+      <ImageView fitHeight="83.0" fitWidth="308.0" layoutX="321.0" layoutY="338.0" pickOnBounds="true">
          <image>
-            <Image url="@../resource/PNG_Assets/PNG/button_text_blue.png" />
+            <Image url="@../resource/PNG_Assets/PNG/element_tooltips.png" />
          </image>
       </ImageView>
       <Label fx:id="scoreLabel" alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="716.0" layoutY="30.0" prefHeight="29.0" prefWidth="134.0" textFill="WHITE">
@@ -41,9 +41,9 @@
             <Font name="Impact" size="30.0" />
          </font>
       </Label>
-      <TextField fx:id="answer" layoutX="364.0" layoutY="468.0" prefHeight="38.0" prefWidth="199.0" style="-fx-background-color: transparent;">
+      <TextField fx:id="answer" alignment="CENTER" layoutX="341.0" layoutY="352.0" onAction="#checkWord" prefHeight="54.0" prefWidth="267.0" style="-fx-background-color: transparent;">
          <font>
-            <Font name="Impact" size="18.0" />
+            <Font name="Impact" size="24.0" />
          </font></TextField>
    </children>
 </AnchorPane>
