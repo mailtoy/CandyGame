@@ -89,9 +89,6 @@ public class GameController {
 				System.out.println("success");
 
 				System.out.println(score);
-//=======
-//				System.out.println("Total score : " + game.getScore()+"");
-//>>>>>>> dc17761c657ef17ffb4b66169500d250b8367ed9
 				nextScene();
 			}
 		});

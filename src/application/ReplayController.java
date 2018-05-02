@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 public class ReplayController {
 
     @FXML
-    private Label showScore = new Label();
+    private Label showScore;
 
     @FXML
     private Button homeButton;
@@ -27,7 +27,11 @@ public class ReplayController {
     private Button rankingButton; 
 
     private int score;
-
+    
+    public void initialize() {
+    	showScoreLable();
+    }
+    
     public int  getScore() {
 		return score;
 	}
@@ -40,10 +44,7 @@ public class ReplayController {
     public void showScoreLable(){
     	showScore.setText(score+"");
     }
-    
-    public void initialize() {
-    	showScoreLable();
-    }
+
     
     @FXML
     private void backHome(ActionEvent event){
