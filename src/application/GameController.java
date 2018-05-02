@@ -34,8 +34,7 @@ public class GameController {
 	@FXML
 	private TextField answer;
 	
-	public int score;
-	public int oldScore;
+	private static int score;
 	private boolean isStop = false;
 	private LogicGame game;
 	private String currentWord;
@@ -58,14 +57,7 @@ public class GameController {
 			currentWord = game.getWord();
 		}
 		wordLable.setText(currentWord);
-		System.out.println("current word : " +currentWord);
-//		answer.setText("");
-//		if(score == oldScore && score != 0 && oldScore != 0){
-//			currentWord = game.getWord();
-//			System.out.println(currentWord);
-//			wordLable.setText(currentWord);
-//		}
-		
+		System.out.println("current word : " +currentWord);		
 	}
 	
 	// pop-up show score, highsore, replaybutton
@@ -74,8 +66,8 @@ public class GameController {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("Replay.fxml"));
 			Parent root = FXMLLoader.load(getClass().getResource("Replay.fxml"));
 			Scene scene = new Scene(root);
-			Stage stage = new Stage();			
-			stage.setScene(scene);
+			Stage stage = new Stage();
+			stage.setScene(scene);		
 			stage.show();
 			 Stage replayStage = (Stage) timeBar.getScene().getWindow();
 			 replayStage.close();
@@ -107,7 +99,7 @@ public class GameController {
 			@Override
 			public void handle(WorkerStateEvent event) {
 				System.out.println("success");
-				System.out.println(score+"");
+				System.out.println(game.getScore()+"");
 //				nextScene();
 			}
 		});
@@ -118,21 +110,17 @@ public class GameController {
 	
 	public void checkWord(){
 		if(wordLable.getText().equals(answer.getText())){
-			System.out.println("init score : "+ score);
 			score += 100;
-			String scoreWord = score+"";
+			game.setScore(score);
+			String scoreWord = game.getScore() + "";
 			scoreLabel.setText(scoreWord);
 			answer.clear();
 			game();
-			System.out.println("current score : " + scoreLabel.getText());getClass();
-			System.out.println("next word : " + currentWord);
-			System.out.println(wordLable.getText());
 		}
 	}
 	
 	public void score(){
-//		checkWord();
-//		scoreLabel.setText("0");
+		
 	}
 
 	public Task createWorker() {
