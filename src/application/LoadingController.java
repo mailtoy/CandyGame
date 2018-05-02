@@ -19,6 +19,9 @@ public class LoadingController {
 	private ProgressBar loadingBar;
 	@FXML
 	private Button tButton;
+	@FXML
+	private Button backHomeButton;
+	
 	private Task<Boolean> copyWorker;
 
 	@FXML

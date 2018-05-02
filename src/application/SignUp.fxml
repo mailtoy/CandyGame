@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SignUpController">
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SignUpController">
    <children>
       <ImageView fitHeight="555.0" fitWidth="890.0" pickOnBounds="true">
          <image>
@@ -72,5 +72,14 @@
             <Font name="Impact" size="16.0" />
          </font>
       </Label>
+      <Button fx:id="backHomeButton" layoutX="7.0" layoutY="12.0" mnemonicParsing="false" onAction="#back" prefHeight="70.0" prefWidth="84.0" style="-fx-background-color: teansprent;">
+         <graphic>
+            <ImageView fitHeight="69.0" fitWidth="89.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resource/PNG_Assets/PNG/btn_arrow_left_click.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
    </children>
 </AnchorPane>

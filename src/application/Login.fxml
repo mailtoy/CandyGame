@@ -20,12 +20,12 @@
             <Image url="@../resource/PNG_Assets/PNG/window_panel_3.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="61.0" fitWidth="211.0" layoutX="381.0" layoutY="179.0" pickOnBounds="true">
+      <ImageView fitHeight="70.0" fitWidth="211.0" layoutX="381.0" layoutY="170.0" pickOnBounds="true">
          <image>
             <Image url="@../resource/PNG_Assets/PNG/button_text_green.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="61.0" fitWidth="206.0" layoutX="383.0" layoutY="266.0" pickOnBounds="true">
+      <ImageView fitHeight="70.0" fitWidth="206.0" layoutX="384.0" layoutY="254.0" pickOnBounds="true">
          <image>
             <Image url="@../resource/PNG_Assets/PNG/button_text_green.png" />
          </image>
@@ -54,7 +54,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Label layoutX="295.0" layoutY="296.0" text="PASSWORD:" textFill="WHITE">
+      <Label layoutX="295.0" layoutY="274.0" text="PASSWORD:" textFill="WHITE">
          <font>
             <Font name="Impact" size="16.0" />
          </font>
@@ -63,7 +63,7 @@
          <font>
             <Font name="Impact" size="16.0" />
          </font></TextField>
-      <TextField fx:id="password" layoutX="407.0" layoutY="278.0" prefHeight="21.0" prefWidth="170.0" style="-fx-background-color: teansparent;">
+      <TextField fx:id="password" layoutX="407.0" layoutY="268.0" prefHeight="21.0" prefWidth="170.0" style="-fx-background-color: teansparent;">
          <font>
             <Font name="Impact" size="16.0" />
          </font></TextField>
@@ -72,10 +72,19 @@
             <Font name="Impact" size="16.0" />
          </font>
       </Label>
-      <Button fx:id="sigUpButtonP" layoutX="318.0" layoutY="338.0" mnemonicParsing="false" onAction="#signUpButton" prefHeight="21.0" prefWidth="254.0" style="-fx-background-color: teansparent;" text="Don't have an ID? Create yours now." textFill="#b93a3a" underline="true">
+      <Button fx:id="sigUpButtonP" layoutX="294.0" layoutY="327.0" mnemonicParsing="false" onAction="#signUpButton" prefHeight="27.0" prefWidth="300.0" style="-fx-background-color: teansparent;" text="Don't have an ID? Create yours now. Click!" textFill="#b93a3a" underline="true">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
+      </Button>
+      <Button fx:id="backHomeButton" layoutX="14.0" layoutY="8.0" mnemonicParsing="false" onAction="#back" style="-fx-background-color: teansprent;">
+         <graphic>
+            <ImageView fitHeight="78.0" fitWidth="76.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resource/PNG_Assets/PNG/btn_arrow_left_hover.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </Button>
    </children>
 </AnchorPane>

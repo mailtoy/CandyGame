@@ -20,6 +20,9 @@ public class SignUpController {
 	private Button signUpButton;
 
 	@FXML
+	private Button backHomeButton;
+
+	@FXML
 	private TextField idSignUp;
 
 	@FXML
@@ -81,14 +84,17 @@ public class SignUpController {
 			return isUsed;
 		}
 	}
-
-//	public void addUser() {
-//		if (!isUsed()) {
-//			signUp.idList.add(idSignUp.getText().toString());
-//			signUp.passwordList.add(passwordSignUp.getText().toString());
-//			System.out.println("added user");
-//			System.out.println(signUp.idList);
-//		}
-//	}
-
+	
+	public void back(ActionEvent event){
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("Home.fxml"));
+			Stage stage = new Stage();
+			stage.setScene(new Scene((Parent) loader.load()));
+			stage.show();
+			Stage signUpStage = (Stage) backHomeButton.getScene().getWindow();
+			signUpStage.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 }

@@ -26,6 +26,8 @@ public class LoginController {
 	@FXML
 	private Button sigUpButtonP;
 	@FXML
+	private Button backHomeButton;
+	@FXML
 	private Label status;
 	private List<DataTable> list;
 	private UserConnectData data = UserConnectData.getInstance();
@@ -42,6 +44,19 @@ public class LoginController {
 			e.printStackTrace();
 		}
 
+	}
+	
+	public void back(ActionEvent event){
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("Home.fxml"));
+			Stage stage = new Stage();
+			stage.setScene(new Scene((Parent) loader.load()));
+			stage.show();
+			Stage signUpStage = (Stage) backHomeButton.getScene().getWindow();
+			signUpStage.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@FXML
