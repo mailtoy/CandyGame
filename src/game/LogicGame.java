@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import application.ReplayController;
+
 public class LogicGame {
 	private InputStream in;
 	private List<String> words = new ArrayList<>();
@@ -53,6 +55,8 @@ public class LogicGame {
 	public static void main(String[] args) {
 		LogicGame game = new LogicGame();
 		System.out.println(game.getWord());
+		ReplayController replayController = new ReplayController();
+		System.out.println(replayController.getScore());
 	}
 
 //	public String getScore() {

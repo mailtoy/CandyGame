@@ -29,7 +29,7 @@ public class ReplayController {
     private int score;
     
     public void initialize() {
-    	showScoreLable();
+   
     }
     
     public int  getScore() {
@@ -38,11 +38,13 @@ public class ReplayController {
 	
 	public void setScore(int score) {
 		this.score = score;
+		showScore.setText(this.score+"");
 		System.out.println(score+" set");
 	}
 	
     public void showScoreLable(){
-    	showScore.setText(score+"");
+    	System.out.println(score);
+    	showScore.setText("kuy");
     }
 
     
