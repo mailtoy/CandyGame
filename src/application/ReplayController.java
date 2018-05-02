@@ -43,12 +43,6 @@ public class ReplayController {
     }
     
     @FXML
-	public void initialize() {
-    	System.out.println("12345");    	
-    	showScore.setText(game.getScore()+"");
-    }
-    
-    @FXML
     private void backHome(ActionEvent event){
     	try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("Home.fxml"));
