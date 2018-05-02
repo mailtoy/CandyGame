@@ -2,12 +2,13 @@
 
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="890.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.GameController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="890.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.GameController">
    <children>
       <ImageView fitHeight="555.0" fitWidth="890.0" pickOnBounds="true">
          <image>
@@ -19,12 +20,7 @@
             <Image url="@../resource/PNG_Assets/PNG/data_diamond.png" />
          </image>
       </ImageView>
-      <Label fx:id="scoreLabel" alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="716.0" layoutY="30.0" prefHeight="29.0" prefWidth="134.0" text="0" textFill="WHITE">
-         <font>
-            <Font name="Impact" size="30.0" />
-         </font>
-      </Label>
-      <Label fx:id="wordLable" contentDisplay="CENTER" layoutX="313.0" layoutY="193.0" prefHeight="91.0" prefWidth="323.0" textAlignment="CENTER">
+      <Label fx:id="wordLable" alignment="CENTER" contentDisplay="CENTER" layoutX="313.0" layoutY="193.0" prefHeight="91.0" prefWidth="323.0" textAlignment="CENTER">
          <font>
             <Font name="Impact" size="48.0" />
          </font>
@@ -35,5 +31,19 @@
          </image>
       </ImageView>
       <ProgressBar fx:id="timeBar" layoutX="38.0" layoutY="32.0" prefHeight="18.0" prefWidth="395.0" progress="0.0" style="-fx-accent: pink; -fx-background-color: purple; -fx-border-color: purple;" />
+      <ImageView fitHeight="74.0" fitWidth="237.0" layoutX="342.0" layoutY="456.0" pickOnBounds="true">
+         <image>
+            <Image url="@../resource/PNG_Assets/PNG/button_text_blue.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="scoreLabel" alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="716.0" layoutY="30.0" prefHeight="29.0" prefWidth="134.0" textFill="WHITE">
+         <font>
+            <Font name="Impact" size="30.0" />
+         </font>
+      </Label>
+      <TextField fx:id="answer" layoutX="364.0" layoutY="468.0" prefHeight="38.0" prefWidth="199.0" style="-fx-background-color: transparent;">
+         <font>
+            <Font name="Impact" size="18.0" />
+         </font></TextField>
    </children>
 </AnchorPane>

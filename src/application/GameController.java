@@ -13,20 +13,32 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
+import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class GameController {
 	@FXML
 	private ProgressBar timeBar;
+	
 	@FXML
 	private Label scoreLabel;
+	
 	@FXML
 	private Label wordLable;
+	
 	private Task<Boolean> timeWorker;
+	
 	@FXML
 	private Button pause;
+	
+	@FXML
+	private TextField answer;
+	
 	public int score;
+	public int oldScore;
 	private boolean isStop = false;
 	private LogicGame game;
 	private String currentWord;
@@ -35,7 +47,7 @@ public class GameController {
 	public void initialize() {
 		setGame(new LogicGame());
 		time();
-		score();
+//		score();
 	}
 
 	public void setGame(LogicGame game) {
@@ -44,17 +56,25 @@ public class GameController {
 	
 	public void game(){
 		currentWord = game.getWord();
-		System.out.println(currentWord);
-		wordLable.setText(currentWord.toString());
+		wordLable.setText(currentWord);
+		System.out.println("current word : " +currentWord);
+		answer.setText("");
+//		if(score == oldScore && score != 0 && oldScore != 0){
+//			currentWord = game.getWord();
+//			System.out.println(currentWord);
+//			wordLable.setText(currentWord);
+//		}
+		
 	}
 	
 	// pop-up show score, highsore, replaybutton
 	public void nextScene() {
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("Replay.fxml"));
-			Stage stage = new Stage();
-			stage.setScene(new Scene((Parent) loader.load()));
-			stage.initModality(Modality.APPLICATION_MODAL);
+			Parent root = FXMLLoader.load(getClass().getResource("Replay.fxml"));
+			Scene scene = new Scene(root);
+			Stage stage = new Stage();			
+			stage.setScene(scene);
 			stage.show();
 			 Stage replayStage = (Stage) timeBar.getScene().getWindow();
 			 replayStage.close();
@@ -78,29 +98,17 @@ public class GameController {
 	public void time() {
 		game();
 		// setDisable() is used to enable or disable the elements
-		pause.setDisable(false);
+//		pause.setDisable(false);
 		timeBar.setProgress(0);
 		timeWorker = createWorker();
-		// print "running" when it is not success but it is running
-		timeWorker.setOnRunning(new EventHandler<WorkerStateEvent>() {
-			@Override
-			public void handle(WorkerStateEvent event) {
-				System.out.println("running");
-			}
-		});
-		// print "failed" when it is not success but it is failed
-		timeWorker.setOnFailed(new EventHandler<WorkerStateEvent>() {
-			@Override
-			public void handle(WorkerStateEvent event) {
-				System.out.println("failed");
-			}
-		});
 		// show replay when it success
+		checkWord();
 		timeWorker.setOnSucceeded(new EventHandler<WorkerStateEvent>() {
 			@Override
 			public void handle(WorkerStateEvent event) {
 				System.out.println("success");
-				nextScene();
+				System.out.println(score+"");
+//				nextScene();
 			}
 		});
 		timeBar.progressProperty().unbind();
@@ -108,21 +116,35 @@ public class GameController {
 		new Thread(timeWorker).start();
 	}
 	
+	public void checkWord(){
+		if(wordLable.getText().equals(answer.getText())){
+			System.out.println("init score : "+ score);
+			score += 100;
+			String scoreWord = score+"";
+			scoreLabel.setText(scoreWord);
+			game();
+			System.out.println("current score : " + scoreLabel.getText());getClass();
+			System.out.println("next word : " + currentWord);
+			System.out.println(wordLable.getText());
+		}
+	}
+	
 	public void score(){
-		scoreLabel.setText("0");
+//		checkWord();
+//		scoreLabel.setText("0");
 	}
 
 	public Task createWorker() {
 		return new Task() {
 			@Override
 			protected Object call() throws Exception {
-				for (int i = 0; i <= 480; i++) {
+				for (int i = 0; i <= 1000; i++) {
 					if (isStop) {
 						break;
 					}
 					Thread.sleep(10);
-					updateProgress(i + 1, 480);
-					scoreLabel.setText("1");
+					updateProgress(i + 1, 1000);
+					checkWord();
 				}
 				return true;
 			}

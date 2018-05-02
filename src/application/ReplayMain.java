@@ -18,8 +18,8 @@ public class ReplayMain extends Application {
 			Scene scene = new Scene(root);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
-			scene.setFill(Color.TRANSPARENT);
-			primaryStage.initStyle(StageStyle.TRANSPARENT);
+//			scene.setFill(Color.TRANSPARENT);
+//			primaryStage.initStyle(StageStyle.TRANSPARENT);
 			primaryStage.show();
 		} catch(Exception e) {
 			e.printStackTrace();
