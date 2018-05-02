@@ -34,6 +34,7 @@ public class GameController {
 	
 	private int score;
 	private LogicGame game;
+	private ReplayController replay;
 	private String currentWord;
 	private String scoreText = "";
 	
@@ -46,6 +47,10 @@ public class GameController {
 
 	public void setGame(LogicGame game) {
 		this.game = game;
+	}
+	
+	public void setReplayControler(ReplayController replay) {
+		this.replay = replay;
 	}
 	
 	public void game(){
@@ -82,7 +87,11 @@ public class GameController {
 			@Override
 			public void handle(WorkerStateEvent event) {
 				System.out.println("success");
+
 				System.out.println(score);
+//=======
+//				System.out.println("Total score : " + game.getScore()+"");
+//>>>>>>> dc17761c657ef17ffb4b66169500d250b8367ed9
 				nextScene();
 			}
 		});
@@ -97,6 +106,7 @@ public class GameController {
 			scoreText = score + "";
 			String scoreWord = score + "";
 			scoreLabel.setText(scoreWord);
+			System.out.println("score : "+ score);
 			answer.clear();
 			game();
 		}
