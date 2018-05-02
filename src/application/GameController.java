@@ -100,7 +100,7 @@ public class GameController {
 			public void handle(WorkerStateEvent event) {
 				System.out.println("success");
 				System.out.println(game.getScore()+"");
-//				nextScene();
+				nextScene();
 			}
 		});
 		timeBar.progressProperty().unbind();

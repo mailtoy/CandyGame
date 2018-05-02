@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 public class ReplayController {
 
     @FXML
-    private Label showScore;
+    private Label showScore = new Label();
 
     @FXML
     private Button homeButton;
@@ -27,6 +27,12 @@ public class ReplayController {
     private Button rankingButton; 
     
     private LogicGame game;
+    
+    @FXML
+	public void initialize() {
+    	System.out.println("12345");    	
+    	showScore.setText(game.getScore()+"");
+    }
     
     @FXML
     private void backHome(ActionEvent event){
