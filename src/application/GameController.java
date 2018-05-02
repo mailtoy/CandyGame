@@ -51,6 +51,10 @@ public class GameController {
 		this.game = game;
 	}
 	
+	public LogicGame getGame() {
+		return game;
+	}
+	
 	public void setReplayControler(ReplayController replay) {
 		this.replay = replay;
 	}

@@ -20,4 +20,4 @@
 	- Login. Because of ranking, user can compete others so user have to login for collect their score.
 
 ### **Example UI of the game**
-![alt text](/resource/homePage.jpg)
+![alt text](https://github.com/mailtoy/CandyGame/blob/master/src/resource/homePage.jpg)
