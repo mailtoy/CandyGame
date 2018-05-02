@@ -11,7 +11,8 @@ import java.util.Random;
 public class LogicGame {
 	private InputStream in;
 	private List<String> words = new ArrayList<>();
-	private int score;
+	private String score;
+	
 
 	/**
 	 * Initialize new game.
@@ -54,11 +55,11 @@ public class LogicGame {
 		System.out.println(game.getWord());
 	}
 
-	public int getScore() {
+	public String getScore() {
 		return score;
 	}
 	
-	public void setScore(int score) {
+	public void setScore(String score) {
 		this.score = score;
 	}
 }

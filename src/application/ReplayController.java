@@ -28,6 +28,20 @@ public class ReplayController {
     
     private LogicGame game;
     
+    public void setGame(LogicGame game) {
+		this.game = game;
+	} 
+    
+    public void initialize() {
+    	setGame(new LogicGame());
+    	showScoreLable();
+    }
+    
+    public void showScoreLable(){
+    	System.out.println(game.getScore() + " point");
+    	showScore.setText(game.getScore());
+    }
+    
     @FXML
 	public void initialize() {
     	System.out.println("12345");    	
