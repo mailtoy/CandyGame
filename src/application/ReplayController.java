@@ -28,20 +28,7 @@ public class ReplayController {
 
     private int score;
     
-<<<<<<< HEAD
-    private LogicGame game;
-    
-    public void setGame(LogicGame game) {
-		this.game = game;
-	} 
-    
-    public void initialize(){
-    	showScoreLable();
-=======
-    public void initialize() {
-   
->>>>>>> d5b41df0d57c570556bb2d957dc2a232c90ab583
-    }
+
     
     public int  getScore() {
 		return score;
