@@ -44,7 +44,6 @@ public class GameController {
 		setGame(new LogicGame());
 		time();
 		game();
-//		score();
 	}
 
 	public void setGame(LogicGame game) {
@@ -64,13 +63,11 @@ public class GameController {
 	public void nextScene() {
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("Replay.fxml"));
-			Parent root = FXMLLoader.load(getClass().getResource("Replay.fxml"));
-			Scene scene = new Scene(root);
 			Stage stage = new Stage();
-			stage.setScene(scene);		
+			stage.setScene(new Scene((Parent) loader.load()));
 			stage.show();
-			 Stage replayStage = (Stage) timeBar.getScene().getWindow();
-			 replayStage.close();
+			Stage signUpStage = (Stage) timeBar.getScene().getWindow();
+			signUpStage.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -89,18 +86,16 @@ public class GameController {
 	}
 
 	public void time() {
-		// setDisable() is used to enable or disable the elements
-//		pause.setDisable(false);
 		timeBar.setProgress(0);
 		timeWorker = createWorker();
+		
 		// show replay when it success
-//		checkWord();
 		timeWorker.setOnSucceeded(new EventHandler<WorkerStateEvent>() {
 			@Override
 			public void handle(WorkerStateEvent event) {
 				System.out.println("success");
 				System.out.println(game.getScore()+"");
-//				nextScene();
+				nextScene();
 			}
 		});
 		timeBar.progressProperty().unbind();
@@ -109,18 +104,16 @@ public class GameController {
 	}
 	
 	public void checkWord(){
+		String scoreText = "";
 		if(wordLable.getText().equals(answer.getText())){
 			score += 100;
-			game.setScore(score);
+			scoreText = score + "";
+			game.setScore(scoreText);
 			String scoreWord = game.getScore() + "";
 			scoreLabel.setText(scoreWord);
 			answer.clear();
 			game();
 		}
-	}
-	
-	public void score(){
-		
 	}
 
 	public Task createWorker() {
