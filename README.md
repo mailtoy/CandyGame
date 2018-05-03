@@ -21,3 +21,15 @@
 
 ### **Example UI of the game**
 ![alt text](https://github.com/mailtoy/CandyGame/blob/master/src/resource/homePage.jpg)
+
+![alt text](https://github.com/mailtoy/CandyGame/blob/master/src/resource/signupPage.jpg)
+
+![alt text](https://github.com/mailtoy/CandyGame/blob/master/src/resource/loginPage.jpg)
+
+![alt text](https://github.com/mailtoy/CandyGame/blob/master/src/resource/signupPage.jpg)
+
+![alt text](https://github.com/mailtoy/CandyGame/blob/master/src/resource/loadingPage.jpg)
+
+![alt text](https://github.com/mailtoy/CandyGame/blob/master/src/resource/gamePage.jpg)
+
+![alt text](https://github.com/mailtoy/CandyGame/blob/master/src/resource/scorePage.jpg)
