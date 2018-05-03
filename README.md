@@ -15,24 +15,32 @@ and there is a girl who wants to steal these candies from the factory. In order 
 you need to type the exact same word that will appear on the candy before the girl steals it(or time runs up).
 
 ### **Features**
-- Counting scores of user. The score will increase when user press the correct letter on the keyboard.
-- Time bar. When start the game, time bar will become lower and when time bar is empty it means end this game. 
-- Pressing the keyboard. User must press the correct letter (that show on the screen) on the keyboard so that
+- **Counting scores of user**. The score will increase when user press the correct letter on the keyboard.
+- **Time bar**. When start the game, time bar will become lower and when time bar is empty it means end this game. 
+- **Pressing the keyboard**. User must press the correct letter (that show on the screen) on the keyboard so that
 candies will be safe from a girl that want to steal it.
-- Replay. When the game is over, user can play it again.
-- High score. The game will record the high score.
-- Ranking. User can see the highest score and see others.
-- Login. Because of ranking, user can compete others so user have to login for collect their score.
+- **Replay**. When the game is over, user can play it again.
+- **High score. The game will record the high score.
+- **Ranking**. User can see the highest score and see others.
+- **Login**. Because of ranking, user can compete others so user have to login for collect their score.
+- **Sign up**. If user never play the game, user has to sign up.
 
 ### **Example UI of the game**
+
+#### **Home Page**
 ![alt text](https://github.com/mailtoy/CandyGame/blob/master/src/resource/homePage.jpg)
 
+#### **Sign up Page**
 ![alt text](https://github.com/mailtoy/CandyGame/blob/master/src/resource/signupPage.jpg)
 
+#### **Login Page**
 ![alt text](https://github.com/mailtoy/CandyGame/blob/master/src/resource/loginPage.jpg)
 
+#### **Loading Page**
 ![alt text](https://github.com/mailtoy/CandyGame/blob/master/src/resource/loadingPage.jpg)
 
+#### **Game Page**
 ![alt text](https://github.com/mailtoy/CandyGame/blob/master/src/resource/gamePage.jpg)
 
+#### **Score Page**
 ![alt text](https://github.com/mailtoy/CandyGame/blob/master/src/resource/scorePage.jpg)
