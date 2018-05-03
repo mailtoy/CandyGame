@@ -27,9 +27,7 @@ public class ReplayController {
     private Button rankingButton; 
 
     private int score;
-    
-
-    
+        
     public int  getScore() {
 		return score;
 	}

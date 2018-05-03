@@ -4,6 +4,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="890.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.RankingController">
    <children>
@@ -30,5 +31,6 @@
             </ImageView>
          </graphic>
       </Button>
+      <VBox fx:id="vBoxScore" alignment="TOP_CENTER" prefHeight="337.0" prefWidth="286.0" />
    </children>
 </AnchorPane>
