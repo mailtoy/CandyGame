@@ -2,7 +2,7 @@
 This project is typing game. User has to type the correct word as much as user can before the time run outs.
 (Project for Object Oriented Programming II Course)
 
-## **Members**
+## **Authors**
 - Kanchanok Kannee 5910545639 (@mailtoy)
 - Noppawan Kulchol 5910545728 (@Septima777)
 
@@ -20,12 +20,12 @@ you need to type the exact same word that will appear on the candy before the gi
 - **Pressing the keyboard**. User must press the correct letter (that show on the screen) on the keyboard so that
 candies will be safe from a girl that want to steal it.
 - **Replay**. When the game is over, user can play it again.
-- **High score. The game will record the high score.
+- **High score**. The game will record the high score.
 - **Ranking**. User can see the highest score and see others.
 - **Login**. Because of ranking, user can compete others so user have to login for collect their score.
 - **Sign up**. If user never play the game, user has to sign up.
 
-### **Example UI of the game**
+### **How to Play**
 
 #### **Home Page**
 ![alt text](https://github.com/mailtoy/CandyGame/blob/master/src/resource/homePage.jpg)
@@ -44,6 +44,19 @@ candies will be safe from a girl that want to steal it.
 
 #### **Score Page**
 ![alt text](https://github.com/mailtoy/CandyGame/blob/master/src/resource/scorePage.jpg)
+
+## Installation
+### How to install
+- Required Library
+   * ormlite
+      * ormlite-core-5.1 - http://ormlite.com/releases/5.1/ormlite-core-5.1.jar
+      * ormlite-jdbc-5.1 - http://ormlite.com/releases/5.1/ormlite-jdbc-5.1.jar
+   * mysql-connector - https://github.com/winChawakorn/TypingThrower/blob/master/jar/mysql-connector-java-5.1.42-bin.jar
+
+
+### How to run
+ 1. Download all of jar files ...............
+ 2. Run CandyGame.jar file
 
 ## **Interesting Technology used**
  - Database
