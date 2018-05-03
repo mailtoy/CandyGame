@@ -2,7 +2,7 @@
 This project is typing game. User has to type the correct word as much as user can before the time run outs.
 (Project for Object Oriented Programming II Course)
 
-## **Memmbers**
+## **Members**
 - Kanchanok Kannee 5910545639 (@mailtoy)
 - Noppawan Kulchol 5910545728 (@Septima777)
 
