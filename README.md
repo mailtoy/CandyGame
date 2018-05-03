@@ -44,3 +44,11 @@ candies will be safe from a girl that want to steal it.
 
 #### **Score Page**
 ![alt text](https://github.com/mailtoy/CandyGame/blob/master/src/resource/scorePage.jpg)
+
+## **Interesting Technology used**
+ - Database
+      - phpMyAdmin
+      - ormlite
+      - xampp
+ - User Interface
+      - Javafx 8
