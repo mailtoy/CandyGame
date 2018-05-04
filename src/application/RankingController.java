@@ -24,10 +24,10 @@ public class RankingController {
     @FXML
     private VBox vBoxScore;
     
-    @FXML
-    public void initialize(){
-    	showRank();
-    }
+//    @FXML
+//    public void initialize(){
+//    	showRank();
+//    }
     
     @FXML
     public void handleBackPage(ActionEvent event) throws IOException{

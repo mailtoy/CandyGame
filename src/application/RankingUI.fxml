@@ -31,6 +31,6 @@
             </ImageView>
          </graphic>
       </Button>
-      <VBox fx:id="vBoxScore" alignment="TOP_CENTER" prefHeight="337.0" prefWidth="286.0" />
+      <VBox fx:id="vBoxScore" alignment="TOP_CENTER" layoutX="318.0" layoutY="119.0" prefHeight="337.0" prefWidth="286.0" />
    </children>
 </AnchorPane>
