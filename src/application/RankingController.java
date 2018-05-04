@@ -29,15 +29,18 @@ public class RankingController {
     	showRank();
     }
     
-    @FXML
-    public void handleBackPage(ActionEvent event) throws IOException{
-    	FXMLLoader loader = new FXMLLoader(getClass().getResource("Home.fxml")); 
-        Stage stage = new Stage();
-        stage.setScene(new Scene((Parent)loader.load()));
-        stage.show();
-        Stage rankingStage = (Stage) backButton.getScene().getWindow();
-		rankingStage.close();
-    
+   
+    public void handleBackPage(ActionEvent event) {
+    	try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("Home.fxml"));
+			Stage stage = new Stage();
+			stage.setScene(new Scene((Parent) loader.load()));
+			stage.show();
+			Stage homeStage = (Stage) backButton.getScene().getWindow();
+			homeStage.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
     }
     
     @FXML

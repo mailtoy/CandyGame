@@ -61,7 +61,7 @@ public class LoadingController {
 			@Override
 			protected Object call() throws Exception {
 				for (int i = 0; i < 1000; i++) {
-					Thread.sleep(3);
+					Thread.sleep(2);
 					updateProgress(i + 1, 1000);
 				}
 				return true;
