@@ -2,7 +2,6 @@ package application;
 
 import java.io.IOException;
 
-import game.LogicGame;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
