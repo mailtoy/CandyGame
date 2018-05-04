@@ -28,10 +28,11 @@ public class ReplayController {
 
     private int score;
         
-    public int  getScore() {
-		return score;
+    @FXML
+	public void initialize() {
+		showScoreLable();
 	}
-	
+    
 	public void setScore(int score) {
 		this.score = score;
 		showScore.setText(this.score+"");
@@ -39,7 +40,7 @@ public class ReplayController {
 	}
 	
     public void showScoreLable(){
-    	System.out.println(score);
+    	System.out.println(score + "kuy");
     	showScore.setText("kuy");
     }
 

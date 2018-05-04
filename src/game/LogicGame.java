@@ -55,8 +55,6 @@ public class LogicGame {
 	public static void main(String[] args) {
 		LogicGame game = new LogicGame();
 		System.out.println(game.getWord());
-		ReplayController replayController = new ReplayController();
-		System.out.println(replayController.getScore());
 	}
 
 //	public String getScore() {
