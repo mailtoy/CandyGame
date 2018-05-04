@@ -2,6 +2,8 @@ package application;
 
 import java.io.IOException;
 
+import backend.DataTable;
+import backend.UserConnectData;
 import game.LogicGame;
 import javafx.concurrent.Task;
 import javafx.concurrent.WorkerStateEvent;
@@ -37,12 +39,15 @@ public class GameController {
 	private ReplayController replay;
 	private String currentWord;
 	private String scoreText = "";
+	private UserConnectData data = UserConnectData.getInstance();
+	private DataTable table = new DataTable() ;
 	
 	@FXML
 	public void initialize() {
 		setGame(new LogicGame());
 		time();
 		game();
+		checkWord();
 	}
 
 	public void setGame(LogicGame game) {
@@ -51,10 +56,6 @@ public class GameController {
 	
 	public LogicGame getGame() {
 		return game;
-	}
-	
-	public void setReplayControler(ReplayController replay) {
-		this.replay = replay;
 	}
 	
 	public void game(){

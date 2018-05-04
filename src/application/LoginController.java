@@ -31,6 +31,7 @@ public class LoginController {
 	private Label status;
 	private List<DataTable> list;
 	private UserConnectData data = UserConnectData.getInstance();
+	private LoginVerifyUser login;
 
 	public void signUpButton(ActionEvent event) {
 		try {
@@ -61,7 +62,12 @@ public class LoginController {
 
 	@FXML
 	public void enterGame(ActionEvent event) throws IOException {
+		login = LoginVerifyUser.getInstance();
+		System.out.println("LoginVerify" + login);
 		String userLogin = id.getText();
+		login.addUser(userLogin);
+		login.setId(userLogin);
+		
 		System.out.println(userLogin);
 		String passL = password.getText();
 		boolean b = data.isUserExist(userLogin);

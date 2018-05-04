@@ -2,6 +2,7 @@ package application;
 
 import java.io.IOException;
 
+import backend.UserConnectData;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -23,26 +24,24 @@ public class ReplayController {
     private Button replayButton;
 
     @FXML
-    private Button rankingButton; 
+    private Button rankingButton;
+    private LoginVerifyUser replay;
 
     private int score;
+    private UserConnectData data = UserConnectData.getInstance();
         
     @FXML
 	public void initialize() {
-		showScoreLable();
+		
 	}
     
 	public void setScore(int score) {
+		replay = LoginVerifyUser.getInstance();
 		this.score = score;
 		showScore.setText(this.score+"");
 		System.out.println(score+" set");
+		data.updateUserData(replay.id, score);
 	}
-	
-    public void showScoreLable(){
-    	System.out.println(score + "kuy");
-    	showScore.setText("kuy");
-    }
-
     
     @FXML
     private void backHome(ActionEvent event){

@@ -6,6 +6,7 @@ import java.util.List;
 public class LoginVerifyUser {
 	public String id;
 	public String password;
+	public int score;
 	public List<String> idList = new ArrayList<>();
 	public List<String> passwordList = new ArrayList<>();
 	public int isUser;
@@ -23,9 +24,17 @@ public class LoginVerifyUser {
 		}
 		return instance;
 	}
+	
+	public void addUser(String id){
+		idList.add(id);
+	}
 
 	public String getId() {
 		return this.id;
+	}
+	
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public String getPassword() {

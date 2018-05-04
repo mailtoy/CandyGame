@@ -58,5 +58,10 @@ public class DataTable {
 		highScore = highscore;
 
 	}
+	
+	@Override
+	public String toString() {
+		return getUsername()+" "+getHighScore();
+	}
 
 }

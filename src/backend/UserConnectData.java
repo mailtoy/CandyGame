@@ -78,13 +78,13 @@ public class UserConnectData {
 		}
 	}
 	
-	public void updateUserData(DataTable user) {
+	public void updateUserData(String user, int score){
 		try {
-			double wpm = 0;
 			// find target row
-			updateBuilder.where().eq("Username", user.getUsername());
+			updateBuilder.where().eq("Username", user).and().le("highScore", score);
 			// update values
-			updateBuilder.updateColumnValue("WPM", wpm);
+//			updateBuilder.where().eq("highScore", score).
+			updateBuilder.updateColumnValue("highScore", score);
 			
 			updateBuilder.update();
 		} catch (SQLException e) {
