@@ -34,7 +34,7 @@
          </graphic>
       </Button>
 
-      <VBox fx:id="vBoxScore" alignment="TOP_CENTER" layoutX="306.0" layoutY="120.0" prefHeight="337.0" prefWidth="286.0" style="-fx-background-color: teansparent;">
+      <VBox fx:id="vBoxScore" alignment="TOP_CENTER" layoutX="306.0" layoutY="120.0" prefHeight="337.0" prefWidth="251.0" style="-fx-background-color: teansparent;">
          <children>
             <ScrollBar orientation="VERTICAL" prefHeight="344.0" prefWidth="17.0" style="-fx-background-color: teansparent;">
                <VBox.margin>

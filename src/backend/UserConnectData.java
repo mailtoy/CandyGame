@@ -14,7 +14,7 @@ public class UserConnectData {
 	private static UserConnectData databaseConnect = null;
 	private static ConnectionSource connectionSource = null;
 
-	private static final String URL = "jdbc:mysql://10.2.50.191/names";
+	private static final String URL = "jdbc:mysql://10.2.2.211/names";
 	private Dao<DataTable, String> userDao;
 	private List<DataTable> getDetailUser;
 	private UpdateBuilder<DataTable, String> updateBuilder;
