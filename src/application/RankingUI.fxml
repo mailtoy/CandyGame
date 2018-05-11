@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -34,13 +33,9 @@
          </graphic>
       </Button>
 
-      <VBox fx:id="vBoxScore" alignment="TOP_CENTER" layoutX="306.0" layoutY="120.0" prefHeight="337.0" prefWidth="251.0" style="-fx-background-color: teansparent;">
+      <VBox fx:id="vBoxScore" alignment="TOP_CENTER" layoutX="284.0" layoutY="120.0" prefHeight="312.0" prefWidth="322.0">
          <children>
-            <ScrollBar orientation="VERTICAL" prefHeight="344.0" prefWidth="17.0" style="-fx-background-color: teansparent;">
-               <VBox.margin>
-                  <Insets left="265.0" />
-               </VBox.margin>
-            </ScrollBar>
+            <ScrollPane fx:id="scroll" prefHeight="312.0" prefWidth="322.0" />
          </children></VBox>
    </children>
 </AnchorPane>

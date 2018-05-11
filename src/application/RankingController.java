@@ -11,10 +11,14 @@ import backend.UserConnectData;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.control.ScrollPane.ScrollBarPolicy;
+import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -24,6 +28,8 @@ public class RankingController {
 
 	@FXML
 	private Button backButton;
+	@FXML
+	private ScrollPane scroll;
 
 	@FXML
 	private VBox vBoxScore;
@@ -68,21 +74,24 @@ public class RankingController {
 		Label userLabel = null;
 		int index = 1;
 		for (DataTable dataTable : listPlayer) {
+			userLabel = new Label(String.format(" %2d. %-14s  %4d", index,dataTable.getUsername(),dataTable.getHighScore()));
+//			System.out.printf("%d. %-32s%2d", index,dataTable.getUsername(),dataTable.getHighScore());
+//			System.out.println();
+			userLabel.setFont(Font.font("Monospace",FontWeight.BOLD,20));
+			userLabel.setAlignment(Pos.TOP_CENTER);
+			vBox.getChildren().addAll(userLabel);
 			
-			
-			userLabel = new Label(String.format("%d. %-8s\t\t\t\t%2d", index,dataTable.getUsername(),dataTable.getHighScore()));
-			userLabel.setFont(Font.font("Impact",FontWeight.BOLD,25));
-			vBox.getChildren().add(userLabel);
 			index++;
 		}
+		scroll.setVbarPolicy(ScrollBarPolicy.NEVER);
+	    scroll.setFocusTraversable(false);
+		vBoxScore.getChildren().addAll(vBox);
+		scroll.setContent(vBox); 
+		scroll.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+	    scroll.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+	    scroll.setStyle("-fx-background-color:transparent");
+	    scroll.setStyle("-fx-background-color: transparent; -fx-background-insets: 0; -fx-border-color: transparent; -fx-border-width: 0; -fx-border-insets: 0;");
 		
-		// System.out.println(scoreString);
-		// vBoxScore.getChildren().setAll(userLabel);
-		 
-		vBoxScore.getChildren().add(vBox);
-
-		// }
-
 	}
 
 	public static void main(String[] args) {
