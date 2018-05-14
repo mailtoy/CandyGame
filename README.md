@@ -65,3 +65,6 @@ candies will be safe from a girl that want to steal it.
       - xampp
  - User Interface
       - Javafx 8
+
+## Design Pattern
+ - Singleton
