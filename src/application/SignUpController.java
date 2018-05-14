@@ -11,6 +11,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -26,7 +27,7 @@ public class SignUpController {
 	private TextField idSignUp;
 
 	@FXML
-	private TextField passwordSignUp;
+	private PasswordField passwordSignUp;
 
 	@FXML
 	private Label status;
