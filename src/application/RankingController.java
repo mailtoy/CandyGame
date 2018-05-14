@@ -75,8 +75,6 @@ public class RankingController {
 		int index = 1;
 		for (DataTable dataTable : listPlayer) {
 			userLabel = new Label(String.format(" %2d. %-14s  %4d", index,dataTable.getUsername(),dataTable.getHighScore()));
-//			System.out.printf("%d. %-32s%2d", index,dataTable.getUsername(),dataTable.getHighScore());
-//			System.out.println();
 			userLabel.setFont(Font.font("Monospace",FontWeight.BOLD,20));
 			userLabel.setAlignment(Pos.TOP_CENTER);
 			vBox.getChildren().addAll(userLabel);

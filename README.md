@@ -45,6 +45,8 @@ candies will be safe from a girl that want to steal it.
 #### **Score Page**
 ![alt text](https://github.com/mailtoy/CandyGame/blob/master/src/resource/scorePage.jpg)
 
+#### **Ranking  Page**
+![alt text](https://github.com/mailtoy/CandyGame/blob/master/src/resource/)
 ## Installation
 ### How to install
 - Required Library

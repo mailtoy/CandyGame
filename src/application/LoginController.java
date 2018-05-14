@@ -96,7 +96,6 @@ public class LoginController {
 
 					find = true;
 				}
-
 			}
 			// incorrect id and/or password
 			if (!find) {

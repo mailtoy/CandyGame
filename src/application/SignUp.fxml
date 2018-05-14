@@ -45,7 +45,7 @@
             <Font name="Impact" size="41.0" />
          </font>
       </Label>
-      <Button fx:id="signUpButton" layoutX="547.0" layoutY="351.0" mnemonicParsing="false" onAction="#enterGame" prefHeight="61.0" prefWidth="76.0" style="-fx-background-color: teansparent;">
+      <Button fx:id="signUpButton" layoutX="547.0" layoutY="351.0" mnemonicParsing="false" onAction="#enterGame" onDragDetected="#enterGame" prefHeight="61.0" prefWidth="76.0" style="-fx-background-color: teansparent;">
          <graphic>
             <ImageView blendMode="SRC_ATOP" fitHeight="50.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
                <image>
