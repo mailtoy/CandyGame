@@ -7,13 +7,11 @@ import backend.UserConnectData;
 import game.LogicGame;
 import javafx.concurrent.Task;
 import javafx.concurrent.WorkerStateEvent;
-import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextField;
@@ -118,9 +116,9 @@ public class GameController {
 		return new Task() {
 			@Override
 			protected Object call() throws Exception {
-				for (int i = 0; i <= 1000; i++) {
-					Thread.sleep(10);
-					updateProgress(i + 1, 1000);
+				for (int i = 0; i <= 480; i++) {
+					Thread.sleep(125);
+					updateProgress(i + 1, 480);
 				}
 				return true;
 			}

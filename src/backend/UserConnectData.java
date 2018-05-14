@@ -23,18 +23,14 @@ public class UserConnectData {
 	 * set start connection source to be null
 	 */
 	private UserConnectData() {
-
 		try {
 			connectionSource = new JdbcConnectionSource(URL, "root", "");
 			userDao = DaoManager.createDao(connectionSource, DataTable.class);
 			updateBuilder = userDao.updateBuilder();
-			// TableUtils.createTableIfNotExists(connectionSource,DataTable.class);
-
 		} catch (SQLException e1) {
 			System.out.println("create connection error");
 			e1.printStackTrace();
 		}
-
 	}
 
 	public static UserConnectData getInstance() {
@@ -70,7 +66,6 @@ public class UserConnectData {
 
 	public void createUser(DataTable userToAdd) {
 		try {
-			
 			userDao.createIfNotExists(userToAdd);
 		} catch (SQLException e) {
 			System.out.println(e);
@@ -83,9 +78,7 @@ public class UserConnectData {
 			// find target row
 			updateBuilder.where().eq("Username", user).and().le("highScore", score);
 			// update values
-//			updateBuilder.where().eq("highScore", score).
 			updateBuilder.updateColumnValue("highScore", score);
-			
 			updateBuilder.update();
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());

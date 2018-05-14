@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -45,7 +46,7 @@
             <Font name="Impact" size="41.0" />
          </font>
       </Label>
-      <Button fx:id="signUpButton" layoutX="547.0" layoutY="351.0" mnemonicParsing="false" onAction="#enterGame" prefHeight="61.0" prefWidth="76.0" style="-fx-background-color: teansparent;">
+      <Button fx:id="signUpButton" layoutX="547.0" layoutY="351.0" mnemonicParsing="false" onAction="#enterGame" onDragDetected="#enterGame" prefHeight="61.0" prefWidth="76.0" style="-fx-background-color: teansparent;">
          <graphic>
             <ImageView blendMode="SRC_ATOP" fitHeight="50.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -63,10 +64,7 @@
          <font>
             <Font name="Impact" size="16.0" />
          </font></TextField>
-      <TextField fx:id="passwordSignUp" layoutX="407.0" layoutY="290.0" prefHeight="21.0" prefWidth="170.0" style="-fx-background-color: teansparent;">
-         <font>
-            <Font name="Impact" size="16.0" />
-         </font></TextField>
+      <PasswordField fx:id="passwordSignUp" layoutX="403.0" layoutY="293.0" style="-fx-background-color: teansparent;" />
       <Label fx:id="status" alignment="CENTER" layoutX="310.0" layoutY="41.0" prefHeight="17.0" prefWidth="268.0" textFill="#f81515">
          <font>
             <Font name="Impact" size="16.0" />

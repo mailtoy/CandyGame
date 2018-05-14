@@ -45,17 +45,18 @@ candies will be safe from a girl that want to steal it.
 #### **Score Page**
 ![alt text](https://github.com/mailtoy/CandyGame/blob/master/src/resource/scorePage.jpg)
 
+#### **Ranking  Page**
+![alt text](https://github.com/mailtoy/CandyGame/blob/master/src/resource/Screen%20Shot%202561-05-14%20at%201.06.03%20PM.png)
 ## Installation
 ### How to install
 - Required Library
    * ormlite
       * ormlite-core-5.1 - http://ormlite.com/releases/5.1/ormlite-core-5.1.jar
       * ormlite-jdbc-5.1 - http://ormlite.com/releases/5.1/ormlite-jdbc-5.1.jar
-   * mysql-connector - https://github.com/winChawakorn/TypingThrower/blob/master/jar/mysql-connector-java-5.1.42-bin.jar
-
+   * mysql-connector - https://github.com/mailtoy/CandyGame/blob/master/src/sql/mysql-connector-java-5.1.42-bin%20(1).jar
 
 ### How to run
- 1. Download all of jar files ...............
+ 1. Download all of jar files : https://github.com/mailtoy/CandyGame/blob/master/CandyGame_Project.jar
  2. Run CandyGame.jar file
 
 ## **Interesting Technology used**
