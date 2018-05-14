@@ -69,3 +69,4 @@ candies will be safe from a girl that want to steal it.
 
 ## Design Pattern
  - Singleton
+ - MVC (Model View Controller)
