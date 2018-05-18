@@ -3,6 +3,7 @@ package backend;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.ResourceBundle;
 
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.dao.DaoManager;
@@ -13,8 +14,11 @@ import com.j256.ormlite.support.ConnectionSource;
 public class UserConnectData {
 	private static UserConnectData databaseConnect = null;
 	private static ConnectionSource connectionSource = null;
-
-	private static final String URL = "jdbc:mysql://10.2.2.211/names";
+	
+	private static ResourceBundle bundle = ResourceBundle.getBundle("config");
+	private static final String NAME = bundle.getString("jdbc.user");
+	private static final String URL = bundle.getString("jdbc.url");
+	private static final String PW = bundle.getString("jdbc.password");
 	private Dao<DataTable, String> userDao;
 	private List<DataTable> getDetailUser;
 	private UpdateBuilder<DataTable, String> updateBuilder;
@@ -24,7 +28,8 @@ public class UserConnectData {
 	 */
 	private UserConnectData() {
 		try {
-			connectionSource = new JdbcConnectionSource(URL, "root", "");
+			connectionSource = new JdbcConnectionSource(URL, NAME, PW);
+			System.out.println(URL+" "+NAME+" "+PW);
 			userDao = DaoManager.createDao(connectionSource, DataTable.class);
 			updateBuilder = userDao.updateBuilder();
 		} catch (SQLException e1) {
