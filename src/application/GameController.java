@@ -62,7 +62,6 @@ public class GameController {
 			currentWord = game.getWord();
 		}
 		wordLable.setText(currentWord);
-		System.out.println("current word : " +currentWord);		
 	}
 	
 	// pop-up show score, highsore, replaybutton
@@ -77,7 +76,6 @@ public class GameController {
 			Stage signUpStage = (Stage) timeBar.getScene().getWindow();
 			signUpStage.close();
 		} catch (Exception e) {
-			e.printStackTrace();
 		}
 	}
 
@@ -89,9 +87,6 @@ public class GameController {
 		timeWorker.setOnSucceeded(new EventHandler<WorkerStateEvent>() {
 			@Override
 			public void handle(WorkerStateEvent event) {
-				System.out.println("success");
-
-				System.out.println(score);
 				nextScene();
 			}
 		});
@@ -106,7 +101,6 @@ public class GameController {
 			scoreText = score + "";
 			String scoreWord = score + "";
 			scoreLabel.setText(scoreWord);
-			System.out.println("score : "+ score);
 			answer.clear();
 			game();
 		}

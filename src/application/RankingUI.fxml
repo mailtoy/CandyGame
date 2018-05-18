@@ -23,7 +23,7 @@
             <Image url="@../resource/window_panel_title_2@4x.png" />
          </image>
       </ImageView>
-      <Button fx:id="backButton" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleBackPage" prefHeight="70.0" prefWidth="89.0" style="-fx-background-color: teansparent;">
+      <Button fx:id="backButton" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleBackPage" prefHeight="70.0" prefWidth="89.0" style="-fx-background-color: transparent;">
          <graphic>
             <ImageView fitHeight="70.0" fitWidth="89.0" pickOnBounds="true" preserveRatio="true">
                <image>

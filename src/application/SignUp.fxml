@@ -46,7 +46,7 @@
             <Font name="Impact" size="41.0" />
          </font>
       </Label>
-      <Button fx:id="signUpButton" layoutX="547.0" layoutY="351.0" mnemonicParsing="false" onAction="#enterGame" onDragDetected="#enterGame" prefHeight="61.0" prefWidth="76.0" style="-fx-background-color: teansparent;">
+      <Button fx:id="signUpButton" layoutX="547.0" layoutY="351.0" mnemonicParsing="false" onAction="#enterGame" onDragDetected="#enterGame" prefHeight="61.0" prefWidth="76.0" style="-fx-background-color: transparent;">
          <graphic>
             <ImageView blendMode="SRC_ATOP" fitHeight="50.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -60,17 +60,17 @@
             <Font name="Impact" size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="idSignUp" layoutX="407.0" layoutY="193.0" prefHeight="21.0" prefWidth="170.0" style="-fx-background-color: teansparent;">
+      <TextField fx:id="idSignUp" layoutX="407.0" layoutY="193.0" prefHeight="21.0" prefWidth="170.0" style="-fx-background-color: transparent;">
          <font>
             <Font name="Impact" size="16.0" />
          </font></TextField>
-      <PasswordField fx:id="passwordSignUp" layoutX="403.0" layoutY="293.0" onAction="#enterGame" style="-fx-background-color: teansparent;" />
+      <PasswordField fx:id="passwordSignUp" layoutX="403.0" layoutY="293.0" onAction="#enterGame" style="-fx-background-color: transparent;" />
       <Label fx:id="status" alignment="CENTER" layoutX="310.0" layoutY="41.0" prefHeight="17.0" prefWidth="268.0" textFill="#f81515">
          <font>
             <Font name="Impact" size="16.0" />
          </font>
       </Label>
-      <Button fx:id="backHomeButton" layoutX="7.0" layoutY="12.0" mnemonicParsing="false" onAction="#back" prefHeight="70.0" prefWidth="84.0" style="-fx-background-color: teansprent;">
+      <Button fx:id="backHomeButton" layoutX="7.0" layoutY="12.0" mnemonicParsing="false" onAction="#back" prefHeight="70.0" prefWidth="84.0" style="-fx-background-color: transparent;">
          <graphic>
             <ImageView fitHeight="69.0" fitWidth="89.0" pickOnBounds="true" preserveRatio="true">
                <image>

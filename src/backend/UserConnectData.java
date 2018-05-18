@@ -36,7 +36,6 @@ public class UserConnectData {
 			updateBuilder = userDao.updateBuilder();
 		} catch (SQLException e1) {
 			System.out.println("create connection error");
-			e1.printStackTrace();
 		}
 	}
 
@@ -61,12 +60,10 @@ public class UserConnectData {
 
 	public boolean isUserExist(String username) {
 		DataTable userTable = null;
-		System.out.println("Username: "+username);
 		try {
 			userTable = userDao.queryForId(username);
 
 		} catch (SQLException e) {
-			System.out.println(e);
 			System.out.println("User exist error");
 		}
 		return userTable != null;
@@ -76,7 +73,6 @@ public class UserConnectData {
 		try {
 			userDao.createIfNotExists(userToAdd);
 		} catch (SQLException e) {
-			System.out.println(e);
 			System.out.println("create user error");
 		}
 	}
@@ -89,7 +85,6 @@ public class UserConnectData {
 			updateBuilder.updateColumnValue("highScore", score);
 			updateBuilder.update();
 		} catch (SQLException e) {
-			System.out.println(e.getMessage());
 		}
 	}
 

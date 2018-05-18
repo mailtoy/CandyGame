@@ -31,7 +31,6 @@ public class HomeController {
 			Stage loginStage = (Stage) loginButton.getScene().getWindow();
 			loginStage.close();
 		} catch (IOException e) {
-			e.printStackTrace();
 		}
 		
 	}
@@ -45,7 +44,6 @@ public class HomeController {
 			Stage loginStage = (Stage) signUpButton.getScene().getWindow();
 			loginStage.close();
 		} catch (IOException e) {
-			e.printStackTrace();
 		}
 		
 	}
@@ -59,7 +57,6 @@ public class HomeController {
 			Stage loginStage = (Stage) rankButton.getScene().getWindow();
 			loginStage.close();
 		} catch (IOException e) {
-			e.printStackTrace();
 		}
 		
 	}

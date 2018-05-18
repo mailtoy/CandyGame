@@ -43,7 +43,6 @@ public class LoginController {
 			Stage signUpStage = (Stage) sigUpButtonP.getScene().getWindow();
 			signUpStage.close();
 		} catch (IOException e) {
-			e.printStackTrace();
 		}
 
 	}
@@ -57,22 +56,18 @@ public class LoginController {
 			Stage signUpStage = (Stage) backHomeButton.getScene().getWindow();
 			signUpStage.close();
 		} catch (IOException e) {
-			e.printStackTrace();
 		}
 	}
 
 	@FXML
 	public void enterGame(ActionEvent event) throws IOException {
 		login = LoginVerifyUser.getInstance();
-		System.out.println("LoginVerify" + login);
 		String userLogin = id.getText();
 		login.addUser(userLogin);
 		login.setId(userLogin);
 		
-		System.out.println(userLogin);
 		String passL = password.getText();
 		boolean b = data.isUserExist(userLogin);
-		System.out.println(b);
 		if (!data.isUserExist(userLogin)) {
 			status.setText("Please sign up!");
 		}
@@ -81,7 +76,6 @@ public class LoginController {
 			list = data.pullAllUserdata();
 			boolean find = false;
 			for (DataTable d : list) {
-				System.out.println(d.getUsername() + " " + d.getPassword());
 				if (d.getPassword().equals(passL)) {
 					// can play
 					try {
@@ -92,7 +86,6 @@ public class LoginController {
 						Stage loginStage = (Stage) enterButton.getScene().getWindow();
 						loginStage.close();
 					} catch (IOException e) {
-						e.printStackTrace();
 					}
 
 					find = true;

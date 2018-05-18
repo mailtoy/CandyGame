@@ -54,14 +54,6 @@ public class LogicGame {
 
 	public static void main(String[] args) {
 		LogicGame game = new LogicGame();
-		System.out.println(game.getWord());
 	}
 
-//	public String getScore() {
-//		return score;
-//	}
-//	
-//	public void setScore(String score) {
-//		this.score = score;
-//	}
 }

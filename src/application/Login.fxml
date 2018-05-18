@@ -46,7 +46,7 @@
             <Font name="Impact" size="41.0" />
          </font>
       </Label>
-      <Button fx:id="enterButton" layoutX="547.0" layoutY="351.0" mnemonicParsing="false" onAction="#enterGame" prefHeight="61.0" prefWidth="76.0" style="-fx-background-color: teansparent;">
+      <Button fx:id="enterButton" layoutX="547.0" layoutY="351.0" mnemonicParsing="false" onAction="#enterGame" prefHeight="61.0" prefWidth="76.0" style="-fx-background-color: transparent;">
          <graphic>
             <ImageView blendMode="SRC_ATOP" fitHeight="50.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -60,7 +60,7 @@
             <Font name="Impact" size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="id" layoutX="407.0" layoutY="187.0" prefHeight="21.0" prefWidth="170.0" style="-fx-background-color: teansparent;">
+      <TextField fx:id="id" layoutX="407.0" layoutY="187.0" prefHeight="21.0" prefWidth="170.0" style="-fx-background-color: transparent;">
          <font>
             <Font name="Impact" size="16.0" />
          </font></TextField>
@@ -69,12 +69,12 @@
             <Font name="Impact" size="16.0" />
          </font>
       </Label>
-      <Button fx:id="sigUpButtonP" layoutX="294.0" layoutY="327.0" mnemonicParsing="false" onAction="#signUpButton" prefHeight="27.0" prefWidth="300.0" style="-fx-background-color: teansparent;" text="Don't have an ID? Create yours now. Click!" textFill="#b93a3a" underline="true">
+      <Button fx:id="sigUpButtonP" layoutX="294.0" layoutY="327.0" mnemonicParsing="false" onAction="#signUpButton" prefHeight="27.0" prefWidth="300.0" style="-fx-background-color: transparent;" text="Don't have an ID? Create yours now. Click!" textFill="#b93a3a" underline="true">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="backHomeButton" layoutX="14.0" layoutY="8.0" mnemonicParsing="false" onAction="#back" style="-fx-background-color: teansprent;">
+      <Button fx:id="backHomeButton" layoutX="14.0" layoutY="8.0" mnemonicParsing="false" onAction="#back" style="-fx-background-color: transparent;">
          <graphic>
             <ImageView fitHeight="78.0" fitWidth="76.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -83,6 +83,6 @@
             </ImageView>
          </graphic>
       </Button>
-      <PasswordField fx:id="password" layoutX="404.0" layoutY="270.0" onAction="#enterGame" prefHeight="33.0" prefWidth="167.0" style="-fx-background-color: teansparent;" />
+      <PasswordField fx:id="password" layoutX="404.0" layoutY="270.0" onAction="#enterGame" prefHeight="33.0" prefWidth="167.0" style="-fx-background-color: transparent" />
    </children>
 </AnchorPane>

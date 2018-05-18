@@ -73,10 +73,10 @@ public class RankingController {
 
 	@FXML
 	public void showRank() {
-		System.out.println(data.pullAllUserdata().toString());
 		List<DataTable> listPlayer = new ArrayList<DataTable>(data.pullAllUserdata());
 		VBox vBox = new VBox(listPlayer.size());
 		sortScore(listPlayer);
+		
 		Label userLabel = null;
 		int index = 1;
 		for (DataTable dataTable : listPlayer) {
@@ -87,31 +87,22 @@ public class RankingController {
 			userLabel.setAlignment(Pos.TOP_CENTER);
 			vBox.setBackground(background);
 			vBox.getChildren().addAll(userLabel);
-//			vBox.setStyle("-fx-background-color:red");
 			
 			index++;
 		}
 		Background background = new Background(new BackgroundFill(Color.DARKORANGE, CornerRadii.EMPTY, Insets.EMPTY));
 		scroll.setBackground(background);
-//		scroll.setStyle("-fx-background-color:transparent");
-//		scroll.setStyle("-fx-background-color: transparent; -fx-background-insets: 0; -fx-border-color: transparent; -fx-border-width: 0; -fx-border-insets: 0;");
-//		scroll.setVbarPolicy(ScrollBarPolicy.NEVER);
 	    scroll.setFocusTraversable(false);
 		vBoxScore.getChildren().addAll(vBox);
-//		vBoxScore.setStyle("-fx-background-color:red");
 		vBoxScore.setBackground(background);
 		scroll.setContent(vBox); 
-//		scroll.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
-//	    scroll.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
 		
 	}
 
 	public static void main(String[] args) {
 		UserConnectData data = UserConnectData.getInstance();
-		System.out.println(data.pullAllUserdata().toString());
 		List<DataTable> listPlayer = new ArrayList<DataTable>(data.pullAllUserdata());
 		sortScore(listPlayer);
-		System.out.println(listPlayer);
 	}
 
 }

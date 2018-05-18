@@ -24,8 +24,8 @@
             <Font name="Impact" size="53.0" />
          </font>
       </Label>
-      <Button fx:id="homeButton" layoutX="324.0" layoutY="387.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#backHome" prefHeight="66.0" prefWidth="70.0" style="-fx-background-color: teansparent;" />
-      <Button fx:id="replayButton" layoutX="404.0" layoutY="367.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#playAgain" prefHeight="80.0" prefWidth="78.0" style="-fx-background-color: teansparent;" />
-      <Button fx:id="rankingButton" layoutX="489.0" layoutY="387.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#showRanking" prefHeight="66.0" prefWidth="70.0" style="-fx-background-color: teansparent;" />
+      <Button fx:id="homeButton" layoutX="324.0" layoutY="387.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#backHome" prefHeight="66.0" prefWidth="70.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="replayButton" layoutX="404.0" layoutY="367.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#playAgain" prefHeight="80.0" prefWidth="78.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="rankingButton" layoutX="489.0" layoutY="387.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#showRanking" prefHeight="66.0" prefWidth="70.0" style="-fx-background-color: transparent;" />
    </children>
 </AnchorPane>

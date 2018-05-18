@@ -39,7 +39,6 @@ public class ReplayController {
 		replay = LoginVerifyUser.getInstance();
 		this.score = score;
 		showScore.setText(this.score+"");
-		System.out.println(score+" set");
 		data.updateUserData(replay.id, score);
 	}
     
@@ -53,7 +52,6 @@ public class ReplayController {
 			Stage homeStage = (Stage) homeButton.getScene().getWindow();
 			homeStage.close();
 		} catch (IOException e) {
-			e.printStackTrace();
 		}
     }
     
@@ -67,7 +65,6 @@ public class ReplayController {
 			Stage replayStage = (Stage) replayButton.getScene().getWindow();
 			replayStage.close();
 		} catch (IOException e) {
-			e.printStackTrace();
 		}
     }
     
@@ -81,7 +78,6 @@ public class ReplayController {
 			Stage rankingStage = (Stage) rankingButton.getScene().getWindow();
 			rankingStage.close();
 		} catch (IOException e) {
-			e.printStackTrace();
 		}
     }
 

@@ -63,7 +63,6 @@ public class SignUpController {
 							Stage signUpStage = (Stage) signUpButton.getScene().getWindow();
 							signUpStage.close();
 						} catch (IOException e) {
-							e.printStackTrace();
 						}
 					}
 					else { // repeat sign up
@@ -95,7 +94,6 @@ public class SignUpController {
 			Stage signUpStage = (Stage) backHomeButton.getScene().getWindow();
 			signUpStage.close();
 		} catch (IOException e) {
-			e.printStackTrace();
 		}
 	}
 	

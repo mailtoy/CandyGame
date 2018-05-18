@@ -38,7 +38,6 @@ public class LoadingController {
 			Stage loginStage = (Stage) loadingBar.getScene().getWindow();
 			loginStage.close();
 		} catch (IOException e) {
-			e.printStackTrace();
 		}
 	}
 

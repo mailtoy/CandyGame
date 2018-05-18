@@ -17,7 +17,7 @@
             <Image url="@../resource/Untitled-1.png" />
          </image>
       </ImageView>
-      <Button fx:id="loginButton" layoutX="331.0" layoutY="365.0" mnemonicParsing="false" onAction="#login" prefHeight="51.0" prefWidth="146.0" style="-fx-background-color: teansparent;">
+      <Button fx:id="loginButton" layoutX="331.0" layoutY="365.0" mnemonicParsing="false" onAction="#login" prefHeight="51.0" prefWidth="146.0" style="-fx-background-color: transparent;">
          <graphic>
             <ImageView fitHeight="68.0" fitWidth="211.0" pickOnBounds="true">
                <image>
@@ -26,7 +26,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="rankButton" layoutX="794.0" layoutY="14.0" mnemonicParsing="false" onAction="#ranking" prefHeight="68.0" prefWidth="96.0" style="-fx-background-color: teansparent;">
+      <Button fx:id="rankButton" layoutX="794.0" layoutY="14.0" mnemonicParsing="false" onAction="#ranking" prefHeight="68.0" prefWidth="96.0" style="-fx-background-color: transparent;">
          <graphic>
             <ImageView fitHeight="70.0" fitWidth="89.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -35,7 +35,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="signUpButton" layoutX="330.0" layoutY="278.0" mnemonicParsing="false" onAction="#signUp" style="-fx-background-color: teansparent;">
+      <Button fx:id="signUpButton" layoutX="330.0" layoutY="278.0" mnemonicParsing="false" onAction="#signUp" style="-fx-background-color: transparent;">
          <graphic>
             <ImageView fitHeight="70.0" fitWidth="212.0" pickOnBounds="true">
                <image>
@@ -44,7 +44,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="exitButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#exitGame" prefHeight="62.0" prefWidth="59.0" style="-fx-background-color: teansparent;">
+      <Button fx:id="exitButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#exitGame" prefHeight="62.0" prefWidth="59.0" style="-fx-background-color: transparent;">
          <graphic>
             <ImageView fitHeight="70.0" fitWidth="89.0" pickOnBounds="true" preserveRatio="true">
                <image>
