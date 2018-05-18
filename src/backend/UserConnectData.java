@@ -10,15 +10,18 @@ import com.j256.ormlite.dao.DaoManager;
 import com.j256.ormlite.jdbc.JdbcConnectionSource;
 import com.j256.ormlite.stmt.UpdateBuilder;
 import com.j256.ormlite.support.ConnectionSource;
+import com.j256.ormlite.table.DatabaseTableConfig;
+import com.j256.ormlite.table.TableUtils;
 
 public class UserConnectData {
 	private static UserConnectData databaseConnect = null;
 	private static ConnectionSource connectionSource = null;
 	
-	private static ResourceBundle bundle = ResourceBundle.getBundle("config");
-	private static final String NAME = bundle.getString("jdbc.user");
+	private static ResourceBundle bundle = ResourceBundle.getBundle("ip");
+	private static final String NAME = bundle.getString("jdbc.username");
 	private static final String URL = bundle.getString("jdbc.url");
 	private static final String PW = bundle.getString("jdbc.password");
+	
 	private Dao<DataTable, String> userDao;
 	private List<DataTable> getDetailUser;
 	private UpdateBuilder<DataTable, String> updateBuilder;
@@ -29,7 +32,6 @@ public class UserConnectData {
 	private UserConnectData() {
 		try {
 			connectionSource = new JdbcConnectionSource(URL, NAME, PW);
-			System.out.println(URL+" "+NAME+" "+PW);
 			userDao = DaoManager.createDao(connectionSource, DataTable.class);
 			updateBuilder = userDao.updateBuilder();
 		} catch (SQLException e1) {
@@ -59,6 +61,7 @@ public class UserConnectData {
 
 	public boolean isUserExist(String username) {
 		DataTable userTable = null;
+		System.out.println("Username: "+username);
 		try {
 			userTable = userDao.queryForId(username);
 

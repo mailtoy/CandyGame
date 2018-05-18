@@ -83,6 +83,6 @@
             </ImageView>
          </graphic>
       </Button>
-      <PasswordField fx:id="password" layoutX="404.0" layoutY="270.0" prefHeight="33.0" prefWidth="167.0" style="-fx-background-color: teansparent;" />
+      <PasswordField fx:id="password" layoutX="404.0" layoutY="270.0" onAction="#enterGame" prefHeight="33.0" prefWidth="167.0" style="-fx-background-color: teansparent;" />
    </children>
 </AnchorPane>

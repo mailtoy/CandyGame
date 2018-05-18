@@ -64,7 +64,7 @@
          <font>
             <Font name="Impact" size="16.0" />
          </font></TextField>
-      <PasswordField fx:id="passwordSignUp" layoutX="403.0" layoutY="293.0" style="-fx-background-color: teansparent;" />
+      <PasswordField fx:id="passwordSignUp" layoutX="403.0" layoutY="293.0" onAction="#enterGame" style="-fx-background-color: teansparent;" />
       <Label fx:id="status" alignment="CENTER" layoutX="310.0" layoutY="41.0" prefHeight="17.0" prefWidth="268.0" textFill="#f81515">
          <font>
             <Font name="Impact" size="16.0" />
